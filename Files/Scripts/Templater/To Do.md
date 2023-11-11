@@ -3,6 +3,8 @@
 	- [ ] getSubject
 	- [ ] getSource
 	- [ ] writeToFile
+- [ ] Replace Node.js fs module with Templater API modules.
+	- [ ] 
 - [ ] createSource
 	- [ ] input
 	- [ ] error handling

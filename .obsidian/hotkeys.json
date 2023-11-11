@@ -1,5 +1,4 @@
 {
-  "templater-obsidian:create-new-note-from-template": [],
   "templater-obsidian:Templates/Template.md": [
     {
       "modifiers": [
@@ -32,6 +31,25 @@
         "Mod"
       ],
       "key": "PageDown"
+    }
+  ],
+  "templater-obsidian:create-new-note-from-template": [],
+  "templater-obsidian:Templates/\"New Note.md\"": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "Q"
+    }
+  ],
+  "templater-obsidian:Templates/New Note.md": [
+    {
+      "modifiers": [
+        "Alt",
+        "Shift"
+      ],
+      "key": "Q"
     }
   ]
 }
