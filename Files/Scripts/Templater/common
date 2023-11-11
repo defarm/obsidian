@@ -1,0 +1,37 @@
+function formatDate() {
+
+}
+
+function getSubject() {
+
+}
+
+function getSource() {
+    
+}
+
+async function getTemplateType() {
+
+}
+
+function generateStandardFrontmatter() {
+
+}
+
+function generateReferenceFrontmatter() {
+
+}
+
+module.exports = {formatDate, getSubject, getSource, getTemplateType, generateStandardFrontmatter, generateReferenceFrontmatter};
+
+// export function formatDate() {
+
+// }
+
+// export function getSubject() {
+
+// }
+
+// export function getSource() {
+    
+// }

@@ -1,0 +1,23 @@
+/* Style internal links */
+.markdown-preview-view a.internal-link,
+.markdown-source-view a.internal-link {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-size: 20px;
+}
+
+/* Style external links */
+.markdown-preview-view a.external-link,
+.markdown-source-view a.external-link {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-size: 20px;
+}
+
+/* Style internal and external links in edit mode */
+.cm-s-obsidian .cm-hmd-internal-link, 
+.cm-s-obsidian .cm-hmd-external-link {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-size: 20px;
+}

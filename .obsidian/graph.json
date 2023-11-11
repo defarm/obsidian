@@ -1,0 +1,100 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#axiom",
+      "color": {
+        "a": 1,
+        "rgb": 13943560
+      }
+    },
+    {
+      "query": "tag:#concept",
+      "color": {
+        "a": 1,
+        "rgb": 16743168
+      }
+    },
+    {
+      "query": "tag:#corollary",
+      "color": {
+        "a": 1,
+        "rgb": 12881441
+      }
+    },
+    {
+      "query": "tag:#definition",
+      "color": {
+        "a": 1,
+        "rgb": 9784585
+      }
+    },
+    {
+      "query": "tag:#formula",
+      "color": {
+        "a": 1,
+        "rgb": 16711680
+      }
+    },
+    {
+      "query": "tag:#lemma",
+      "color": {
+        "a": 1,
+        "rgb": 4116598
+      }
+    },
+    {
+      "query": "tag:#person",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "tag:#proof",
+      "color": {
+        "a": 1,
+        "rgb": 2697727
+      }
+    },
+    {
+      "query": "tag:#reference",
+      "color": {
+        "a": 1,
+        "rgb": 16724923
+      }
+    },
+    {
+      "query": "tag:#subject",
+      "color": {
+        "a": 1,
+        "rgb": 16777215
+      }
+    },
+    {
+      "query": "tag:#theorem",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.3003387451171875,
+  "close": false
+}

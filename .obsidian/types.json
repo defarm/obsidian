@@ -1,0 +1,14 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "subject": "multitext",
+    "Source": "multitext",
+    "ID": "number",
+    "author/s": "multitext",
+    "attribution": "multitext",
+    "edition": "number",
+    "isbn": "text"
+  }
+}

@@ -1,0 +1,15 @@
+- [ ] Remedy absolute path variables to tp.app.vault
+	- [ ] getTag
+	- [ ] getSubject
+	- [ ] getSource
+	- [ ] writeToFile
+- [ ] createSource
+	- [ ] input
+	- [ ] error handling
+- [ ] generateFrontmatter
+	- [ ] link to createSource
+- [ ] writeToFile
+	- [ ] only add notes within Zettelkasten folder?
+- [ ] main
+	- [ ] unique title check
+	- [ ] debug console error: filename already exists

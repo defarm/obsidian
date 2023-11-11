@@ -1,0 +1,1 @@
+Mathematics Second Brain © 2023 by David Farmilant is licensed under Attribution-NonCommercial-ShareAlike 4.0 International

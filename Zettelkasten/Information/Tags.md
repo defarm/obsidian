@@ -1,0 +1,11 @@
+#axiom
+#concept 
+#corollary 
+#definition 
+#formula 
+#lemma 
+#person
+#proof 
+#reference 
+#subject 
+#theorem 
