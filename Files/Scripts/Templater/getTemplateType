@@ -1,5 +1,0 @@
-export default async function getTemplateType(tp) {
-    const tags = tp.file.tags();
-    // ... rest of the function
-}
-

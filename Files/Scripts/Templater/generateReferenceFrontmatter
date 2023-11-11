@@ -1,3 +1,0 @@
-export default function generateReferenceFrontmatter() {
-    // ... function logic
-}
