@@ -6,7 +6,7 @@ subject:
   - "[[Zettelkasten/Subjects/Ordinary Differential Equations]]"
   - "[[History of Mathematics]]"
 source:
-  - "[[Sources/Ordinary Differential Equations#^efe444|Tenenbaum, Pollard]]"
+  - "[[Zettelkasten/References/Ordinary Differential Equations#^efe444|Tenenbaum, Pollard]]"
 ---
 ### Explanation:
 In 1940, a group boys were looking for their dog and found him in a cave. When they went to retrieve him, they found cave paintings and charcoal from a fire. The question is this: when did these people live in this cave (or more specifically, when was the fire burned)?

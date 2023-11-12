@@ -5,7 +5,7 @@ id: "202301261538"
 subject:
   - "[[Zettelkasten/Subjects/Ordinary Differential Equations]]"
 source:
-  - "[[Sources/Ordinary Differential Equations#^23bb22|Tenenbaum, Pollard]]"
+  - "[[Zettelkasten/References/Ordinary Differential Equations#^23bb22|Tenenbaum, Pollard]]"
 ---
 ### Definition:
 The functions defined by

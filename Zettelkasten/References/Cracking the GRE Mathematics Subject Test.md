@@ -7,7 +7,7 @@ subject:
   - "[[Analytic Geometry]]"
   - "[[Calculus]]"
   - "[[Linear Algebra]]"
-  - "[[Ordinary Differential Equations]]"
+  - "[[Zettelkasten/References/Ordinary Differential Equations]]"
   - "[[Partial Differential Equations]]"
   - "[[Real Analysis]]"
   - "[[Abstract Algebra]]"
@@ -27,7 +27,7 @@ issue:
 pageRange: 
 contact: 
 downloadDate: 
-license:
+license: 
 aliases:
   - Leduc
 ---

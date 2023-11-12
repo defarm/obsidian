@@ -2,32 +2,32 @@
 tags:
   - "#reference"
 id: "202311071220"
-title: "The Organic Chemistry Tutor"
+title: The Organic Chemistry Tutor
 subject:
   - "[[Calculus]]"
-  - "[[Ordinary Differential Equations]]"
+  - "[[Zettelkasten/References/Ordinary Differential Equations]]"
   - "[[Functions]]"
   - "[[Linear Algebra]]"
-attribution: "G, J"
+attribution: G, J
 copyright: "2023"
-medium: "Video"
+medium: Video
 dateOfEntry: "20231109"
-publisher: "G, J"
+publisher: G, J
 edition: 
 isbn: 
-siteName: "The Organic Chemistry Tutor" 
-siteUrl: "https://www.youtube.com/@TheOrganicChemistryTutor"
-publication: "YouTube"
+siteName: The Organic Chemistry Tutor
+siteUrl: https://www.youtube.com/@TheOrganicChemistryTutor
+publication: YouTube
 volumerNo: 
 issue: 
 pageRange: 
-contact: "https://www.patreon.com/MathScienceTutor"
+contact: https://www.patreon.com/MathScienceTutor
 downloadDate: 
-license: "Creative Commons Attribution–NonCommercial–ShareAlike 2.5 License"
+license: Creative Commons Attribution–NonCommercial–ShareAlike 2.5 License
 aliases:
-  - "JG"
-  - "MST"
-  - "OCT"
+  - JG
+  - MST
+  - OCT
 ---
 ### Contents:
 1. Algebra

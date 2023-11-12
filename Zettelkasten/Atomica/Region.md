@@ -5,7 +5,7 @@ id: "202311032010"
 subject:
   - "[[Set Theory]]"
 source:
-  - "[[Sources/Ordinary Differential Equations#^5cf64f|Tenenbaum, Pollard]]"
+  - "[[Zettelkasten/References/Ordinary Differential Equations#^5cf64f|Tenenbaum, Pollard]]"
 ---
 ### Definition:
 A set is called a region if it satisfies the following two conditions:

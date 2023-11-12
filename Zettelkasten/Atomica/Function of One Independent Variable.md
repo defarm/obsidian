@@ -5,7 +5,7 @@ id: "202311031646"
 subject:
   - "[[Functions]]"
 source:
-  - "[[Sources/Ordinary Differential Equations#^2021c1|Tenenbaum, Pollard]]"
+  - "[[Zettelkasten/References/Ordinary Differential Equations#^2021c1|Tenenbaum, Pollard]]"
 ---
 ### Definition:
 A function is a transformation from the domain of one variable to the range of another in such a way that their relation is unique and complete. For example:

@@ -8,7 +8,7 @@ source:
   - "[[Cracking the GRE Mathematics Subject Test#^a932af|Leduc]]"
 ---
 ### Definition:
-A circle is a [[set]] of [[points]] in the plane that are all at a constant, positive distance from a given [[fixed point]]. This constant is called the [[radius]] and the given fixed point is the center. The standard equation of a circle centered at the [[origin]] is:
+A circle is a [[Set]] of [[points]] in the plane that are all at a constant, positive distance from a given [[Fixed Point]]. This constant is called the [[radius]] and the given fixed point is the center. The standard equation of a circle centered at the [[origin]] is:
 
 $$ x^2 + y^2 = a^2 $$
 or equivalently,

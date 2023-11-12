@@ -4,7 +4,7 @@ tags:
 id: "202311071206"
 title: Ordinary Differential Equations
 subject:
-  - "[[Ordinary Differential Equations]]"
+  - "[[Zettelkasten/References/Ordinary Differential Equations]]"
 attribution:
   - Tenenbaum, Morris
   - Pollard, Harry

@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "3596e28fc3ebd029",
+        "id": "0c9d465504ca155d",
         "type": "tabs",
         "children": [
           {
-            "id": "0b798eee7284e329",
+            "id": "1796b3732e036906",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Files/README.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Files/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Files/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Files/README.md"
-              }
+              "state": {}
             }
           },
           {
@@ -144,9 +136,7 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "Files/README.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -167,44 +157,44 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "0b798eee7284e329",
+  "active": "1796b3732e036906",
   "lastOpenFiles": [
-    "Files/LICENSE",
-    "Files/Scripts/Templater/To Do.md",
-    "Files/README.md",
-    "Files/License.md",
-    "Zettelkasten/Information/To Do.md",
-    "Zettelkasten/Information/Tags.md",
-    "Zettelkasten/Information/Organization.md",
+    "Zettelkasten/References/Wikipedia.md",
     "Templates/New Note.md",
-    "Zettelkasten/Subjects/Probability.md",
-    "Sources/TEST1.md",
-    "Zettelkasten/Conic Section.md",
-    "Zettelkasten/Subjects/History of Mathematics.md",
-    "Zettelkasten/Information/Dataview.md",
+    "Zettelkasten/Atomica/TEST.md",
+    "Untitled.md",
+    "Untitled 9.md",
+    "Zettelkasten/People/!PERSON.md",
+    "Zettelkasten/Institutions/!INSTITUTION.md",
+    "Zettelkasten/Information/Tags.md",
+    "Untitled 8.md",
+    "Untitled 7.md",
+    "Untitled 6.md",
+    "Zettelkasten/Institutions/TEST.md",
+    "Untitled 5.md",
+    "Untitled 4.md",
+    "Untitled 3.md",
+    "Untitled 2.md",
+    "Zettelkasten/Atomica/!COROLLARY.md",
+    "Untitled 1.md",
+    "Zettelkasten/Atomica/!AXIOM.md",
+    "Zettelkasten/Atomica/Boundedness.md",
+    "Zettelkasten/References/Calculus with Analytic Geometry.md",
+    "Zettelkasten/Atomica/AXIOM TEST.md",
+    "Zettelkasten/Atomica/AXIOM TEST 2.md",
+    "Sources/TEST.md",
+    "Sources",
+    "Zettelkasten/Institution",
+    "Zettelkasten/References/TEST.md",
+    "Files/README.md",
+    "Files/PDF Files/AMSstyleguide.pdf",
+    "Files/PDF Files",
+    "Zettelkasten/Atomica",
+    "Zettelkasten/Institutions",
+    "Files/LICENSE",
     "LICENSE",
-    "Files/AMSstyleguide.pdf",
-    "Untitled",
-    "Zettelkasten/Fixed Point.md",
-    "Zettelkasten/Function.md",
-    "Zettelkasten/Boundedness.md",
-    "Zettelkasten/Carbon Dating.md",
-    "Zettelkasten/n-Parameter family of solutions.md",
-    "Zettelkasten/People/Marta Hidegkuti.md",
     "Zettelkasten/People",
-    "Zettelkasten/Untitled.md",
-    "Zettelkasten/Subjects/Real Analysis.md",
-    "Zettelkasten/Subjects/Set Theory.md",
-    "Zettelkasten/Subjects/Partial Differential Equations.md",
-    "Zettelkasten/Subjects/Ordinary Differential Equations.md",
-    "Zettelkasten/Subjects/Number Theory.md",
-    "Zettelkasten/Subjects/Logic.md",
     "Zettelkasten/Testing",
-    "Zettelkasten/Testing/TEST1",
-    "Zettelkasten/Testing/TEST4",
-    "Zettelkasten/Testing/TEST3",
-    "Zettelkasten/Testing/TEST2",
-    "Zettelkasten/Testing/TEST",
     "Untitled.canvas"
   ]
 }

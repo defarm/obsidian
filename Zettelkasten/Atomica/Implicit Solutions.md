@@ -5,7 +5,7 @@ id: "202301261526"
 subject:
   - "[[Zettelkasten/Subjects/Ordinary Differential Equations]]"
 source:
-  - "[[Sources/Ordinary Differential Equations#^29027a|Tenenbaum, Pollard]]"
+  - "[[Zettelkasten/References/Ordinary Differential Equations#^29027a|Tenenbaum, Pollard]]"
 ---
 ### Definition:
 A relation $f(x, y)$ is an implicit solution of:

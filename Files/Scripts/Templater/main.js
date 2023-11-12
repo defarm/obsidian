@@ -1,12 +1,13 @@
 const fs = require('fs').promises;
 console.log('fs: initialized ', fs);
 
-const tp = app.plugins.plugins['templater-obsidian'];
-console.log('tp: initiliazed ', tp);
+const to = app.plugins.plugins['templater-obsidian'];
+console.log('tp: initiliazed ', to);
 
 // Gets the tag from the file Tags.md in the Information folder. Also, slices the # so that the YAML frontmatter is sane.
 // TO DO
 // remedy absolute path variable to tp.app.vault
+// update fs to tp
 async function getTag(tp) {
     try {
         console.log('getTag: starting');
@@ -17,13 +18,13 @@ async function getTag(tp) {
         console.log('getTag: tags file path:\n', tagsFilePath);
         console.log('getTag: reading tags file');
         const fileContent = await fs.readFile(tagsFilePath, 'utf8');
-        const tags = fileContent.split('\n').filter(line => line.startsWith('#'));
+        const tags = fileContent.split('\n').filter(line => line.startsWith('#')).map(tag => tag.trim());
         console.log('getTag: tags ', tags);
         
         const chosenTag = await tp.system.suggester(tags, tags);
         console.log('getTag: chosenTag ', chosenTag);
         console.log('getTag: slicing leading #');
-        const chosenTagSliced = chosenTag.slice(1); // Necessary for YAML frontmatter to be formatted correctly.
+        const chosenTagSliced = chosenTag.slice(1).trim(); // Necessary for YAML frontmatter to be formatted correctly.
         console.log('getTag: returning chosenTag');
         return chosenTagSliced;
 
@@ -41,12 +42,12 @@ async function getSubject(tp) {
         console.log('getSubject: starting');
 
         // !! ABSOLUTE PATH BE SURE TO UPDATE IF THE STRUCTURE CHANGES !! //
-        const absolutePath = '/home/df/Obsidian/math/Zettelkasten/Subjects/';
+        const subjectFilePath = '/home/df/Obsidian/math/Zettelkasten/Subjects/';
 
-        console.log('getSubject: absolute path:\n', absolutePath);
+        console.log('getSubject: absolute path:\n', subjectFilePath);
 
         console.log('getSubject: reading fs');
-        const files = await fs.readdir(absolutePath);
+        const files = await fs.readdir(subjectFilePath);
         const subjects = files.map(file => file.replace('.md', ''));
         console.log('getSubject: subjects ', subjects);
         
@@ -62,39 +63,38 @@ async function getSubject(tp) {
     }
 }
 
-// Gets the source from the Sources folder using tp.system.suggester().
+// Gets the reference from the References folder using tp.system.suggester().
 // TO DO
 // remedy absolute path variable to tp.app.vault
-async function getSource(tp) {
+async function getReference(tp) {
     try {
-        console.log('getSource: starting');
+        console.log('getReference: starting');
 
         // !! ABSOLUTE PATH BE SURE TO UPDATE IF THE STRUCTURE CHANGES !! //
-        const absolutePath = '/home/df/Obsidian/math/Sources/';
-        console.log('getSource: absolute path:\n', absolutePath);
+        const referenceFilePath = '/home/df/Obsidian/math/Zettelkasten/References/';
+        console.log('getReference: absolute path:\n', referenceFilePath);
 
-        console.log('getSource: reading fs');
-        const files = await fs.readdir(absolutePath);
-        const sources = files.map(file => file.replace('.md', ''));
-        console.log('getSource: sources ', sources);
+        console.log('getReference: reading fs');
+        const files = await fs.readdir(referenceFilePath);
+        const references = files.map(file => file.replace('.md', ''));
+        console.log('getReference: references ', references);
         
-        const chosenSource = await tp.system.suggester(sources, sources);
-        console.log('getSource: chosenSource ', chosenSource);
+        const chosenReference = await tp.system.suggester(references, references);
+        console.log('getReference: chosenReference ', chosenReference);
 
-        console.log('getSource: returning chosenSource');
-        return chosenSource;
-
+        console.log('getReference: returning chosenReference');
+        return chosenReference;
 
     } catch (err) {
         console.error('Error reading directory:', err);
-        return '\ngetSource: unknown source';
+        return '\ngetReference: unknown reference';
     }
 }
 
-// Creates a new source on #reference tag selection in getTag
+// Creates a new reference on #reference tag selection in getTag
 // TO DO
 // input, error handling
-async function createSource(tp, tag, id, title, subject) {
+async function createReference(tp, tag, id, title, subject) {
     // for all
     const attribution = ""; // author/s; may need special handling since list
     const copyright = ""; // date
@@ -129,19 +129,31 @@ async function createSource(tp, tag, id, title, subject) {
     return frontmatter
 }
 
+// Creates a new institution file on #institution tag selection in getTag
+// TO TO
+// All of it
+async function createInstitution(tp, tag, id, title) {
+
+}
+
 // Generates the frontmatter for a new note by tag
 // TO DO
-// link to createSource
+// link to createReference
+// institution
 async function generateFrontmatter(tp, tag, title) {
+    // title is called in case 'reference':
     console.log('generateFrontmatter: starting');
 
-    console.log('generateFrontmatter: creation date as id');
+    console.log('generateFrontmatter: tp.file.creation_date as id');
     const id = tp.file.creation_date("YYYYMMDDHHMMss");
-    console.log('generateFrontmatter: returned id ', id);
+    console.log('generateFrontmatter: id ', id);
 
     console.log('generateFrontmatter: tag ', tag);
     console.log('generateFrontmatter: checking tag case');
-    
+
+    let frontMatter;
+    console.log(`generateFrontmatter: generating ${tag} frontMatter`);
+    // tags alphabetized and divided by cases
     switch (tag) {
         case 'axiom':
         case 'concept':
@@ -149,152 +161,149 @@ async function generateFrontmatter(tp, tag, title) {
         case 'definition':
         case 'formula':
         case 'lemma':
-        case 'person':
         case 'proof':
         case 'theorem':
             console.log('generateFrontmatter: calling getSubject');
             const subject = await getSubject(tp);
-            console.log('generateFrontmatter: returned subject ', subject);
-            console.log('generateFrontmatter: calling getSource');
-            const source = await getSource(tp);
-            console.log('generateFrontmatter: returned source ', source);    
-            console.log(`generateFrontmatter: generating ${tag} frontmatter`);
-            const standardFrontmatter = `---\ntags:\n  - ${tag}\nid: ${id}\nsubject: "[[${await subject}]]"\nsource: "[[${await source}]]"\nalias: ""\n---\n`;
-            console.log('generateFrontmatter: returning frontmatter');
-            return standardFrontmatter;
-        case 'subject':
-            console.log('generateFrontmatter: generating subject frontmatter');
-            const subjectFrontmatter = `---\ntags:\n  - ${tag}\id: ${id}\n---\n`;
-            console.log('generateFrontmatter: returning subject frontmatter');
-            return subjectFrontmatter;
+            console.log('generateFrontmatter: returned subject\n', subject);
+
+            console.log('generateFrontmatter: calling getReference');
+            const reference = await getReference(tp);
+            console.log('generateFrontmatter: returned reference\n', reference);
+
+            frontMatter = `---\ntags:\n  - ${tag}\nid: ${id}\nsubject: "[[${await subject}]]"\nreference: "[[${await reference}]]"\nalias: ""\n---\n`;
+            break;
+        case 'institution':
+            console.error('generateFrontmatter: createInstitution not yet implemented');
+            break;
         case 'person':
-            console.log('generateFrontmatter: generating person fronmatter');
-            const personFrontmatter = `---\ntags:\n  - ${tag}\id: ${id}\ndob: \ndod: \ninstitution: \nfield: \nwebsite: \ncontact: \n---\n`;
-            return personFrontmatter;
+            frontMatter = `---\ntags:\n  - ${tag}\id: ${id}\ndob: \ndod: \ninstitution: \nfield: \nwebsite: \ncontact: \n---\n`;
+            break;
         case 'reference':
-            console.error('generateFrontmatter: createSource under construction. Exiting!');
+            console.error('generateFrontmatter: createReference not yet implemented');
             /*
-            console.log('generateFrontmatter: reference; calling createSource');
-            const referenceFrontmatter = await createSource(tp, tag, id, title, subject);
-            console.log('generateFrontmatter: returning reference frontmatter from createSource');
+            console.log('generateFrontmatter: reference; calling createReference');
+            const referenceFrontmatter = await createReference(tp, tag, id, title, subject);
+            console.log('generateFrontmatter: returning reference frontmatter from createReference');
             return referenceFrontmatter;
-        */
+            */
+            break;
+        case 'subject':
+            frontMatter = `---\ntags:\n  - ${tag}\id: ${id}\n---\n`;
+            break;
         default:
             console.log('generateFrontmatter: returning unknown');
-            return '\ngenerateFrontmatter: unknown frontmatter';
-        }
-}
+            return '\ngenerateFrontmatter: unknown';
+        };
+    console.log('generateFrontmatter: returning frontMatter');
+    console.log('generateFrontmatter:\n', frontMatter);
+    return frontMatter;
+};
 
 // Generates body of note by tag
+// TO DO
+// institution
+// change fs to tp
 async function generateBody(tp, tag) {
     console.log('generateBody: starting');
+    let body; 
     console.log('generateBody: checking tag case: ', tag);
+    console.log(`generateBody: updating body to ${tag}`);
+    // tags alphabetized    
     switch (tag) {
         case 'axiom':
-            console.log('generateBody: updating body to axiom');
-            const axiom = `### Fact:\n`;
-            console.log('generateBody: returning axiom');
-            return axiom;
+            body = `### Fact:\n`;
+            break;
         case 'concept':
-            console.log('generateBody: updating body to concept');
-            const concept = `### Explanation:\n`;
-            console.log('generateBody: returning concept');
-            return concept;
+            body = `### Explanation:\n`;
+            break;
         case 'corollary':
-            console.log('generateBody: updating body to corollary');
-            const corollary = `### Insight:\n`;
-            console.log('generateBody: returning corollary');
-            return corollary;
+            body = `### Insight:\n`;
+            break;
         case 'definition':
-            console.log('generateBody: updating body to definition');
-            const definition = `### Definition:\n`;
-            console.log('generateBody: returning definition');
-            return definition;
+            body = `### Definition:\n`;
+            break;
         case 'formula':
-            console.log('generateBody: updating body to formula');
-            const formula = `### Formula:\n\n\n### Derivation:\n`;
-            console.log('generateBody: returning formula');
-            return formula;
+            body = `### Formula:\n\n\n### Derivation:\n`;
+            break;
+        case 'institution':
+            body - `### Notes:\n`
+            break;
         case 'lemma':
-            console.log('generateBody: updating body to lemma');
-            const lemma = `### Statement:\n`;
-            console.log('generateBody: returning lemma');
-            return lemma;
+            body = `### Statement:\n`;
+            break;
         case 'person':
-            console.log('generateBody: updating body to person');
-            const person = `### Bio:\n`;
-            console.log('generateBody: returning person');
-            return person;
+            body = `### Bio:\n`;
+            break;
         case 'proof':
-            console.log('generateBody: updating body to proof');
-            const proof = `### Hypothesis:\n\n\n### Supporting Arguments:\n\n\n### Proof:\n`;
-            console.log('generateBody: returning proof');
-            return proof;
+            body = `### Hypothesis:\n\n\n### Supporting Arguments:\n\n\n### Proof:\n`;
+            break;
         case 'reference':
-            console.log('generateBody: updating body to reference');
-            const reference = `### Contents\n`;
-            console.log('generateBody: returning reference');
-            return reference;
+            body = `### Contents\n`;
+            break;
         case 'subject':
-            console.log('generateBody: updating body to subject');
-            const subject = '### Explanation:\n\n\n### Links:\n';
-            console.log('generateBody: returning subject');
-            return subject;
+            body = '### Explanation:\n\n\n### Links:\n';
+            break;
         case 'theorem':
-            console.log('generateBody: updating body to theorem');
-            const theorem = `### Statement:\n`;
-            console.log('generateBody: returning theorem');
-            return theorem;
+            body = `### Statement:\n`;
+            break;
         default:
             console.log('generateBody: returning unknown');
-            return '\ngenerateBody: unknown body';
-    }
-}
+            break;
+    };
+    console.log('generateBody: returning body');
+    console.log('generateBody:\n', body);
+    return body;
+};
 
-// Writes the frontmatter and body content to the note being created by tag. Utilizes fs.writeFile.
+// Writes the frontmatter and body content to the note being created by tag. Utilizes fs.writeFile (should use tp for ease of use for others)
 // TO DO
 // reconcile absolute path with tp.app.vault
-// add a feature that only allows you to add the notes within Zettelkasten ?
+// implement tp.app.vault.write() ?
+// institution
 async function writeToFile(tp, tag, title, frontmatter, body) {
     console.log('writeToFile: starting');
-    const filePath = `/home/df/Obsidian/math/Zettelkasten/${title}.md`;
+    console.log(`writeToFile: parameters:\ntag:\n${tag}\ntitle: ${title}\nfrontmatter:\n${frontmatter}\nbody:\n${body}`);
+    let folderChoice;
+
+    switch (tag) {
+        case 'axiom':
+        case 'concept':
+        case 'corollary':
+        case 'definition':
+        case 'formula':
+        case 'lemma':
+        case 'proof':
+        case 'theorem':
+            folderChoice = "Atomica";
+            break;
+        case 'subject':
+            folderChoice = "Subjects";
+            break;
+        case 'person':
+            folderChoice = "People";
+            break;
+        case 'institution':
+            folderChoice = "Institutions";
+            break;
+        case 'reference':
+            folderChoice = "References";
+            break;
+        default:
+            console.log('writeToFile: returning unknown');
+            return '\nwriteToFile: unknown file path or tag for folderChoice';
+    };
+    console.log('writeToFile: choosing ', folderChoice);
+    const filePath = `/home/df/Obsidian/math/Zettelkasten/${folderChoice}/${title}.md`;
+    console.log('writeToFile: writing to file with fs.writeFile');
     try {
-        switch (tag) {
-            case 'axiom':
-            case 'concept':
-            case 'corollary':
-            case 'definition':
-            case 'formula':
-            case 'lemma':
-            case 'proof':
-            case 'theorem':
-                console.log('writeToFile: writing to file with fs.writeFile');
-                updatedContent = await fs.writeFile(filePath, `${frontmatter}${body}`, 'utf8');
-                console.log(`writeToFile: ${tag} file written`);
-                return updatedContent;
-            case 'subject':
-                console.log('writeToFile: writing to file with fs.writeFile');
-                updatedContent = await fs.writeFile(filePath, `${frontmatter}${body}`, 'utf8');
-                console.log(`writeToFile: ${tag} file written`);
-                return updatedContent;
-            case 'person':
-                console.log('writeToFile: writing to file with fs.writeFile');
-                updatedContent = await fs.writeFile(filePath, `${frontmatter}${body}`, 'utf8');
-                console.log(`writeToFile: ${tag} file written`);
-                return updatedContent;
-            case 'reference':
-                console.log('writeToFile: writing to file with fs.writeFile');
-                updatedContent = await fs.writeFile(filePath, `${frontmatter}${body}`, 'utf8');
-                console.log(`writeToFile: ${tag} file written`);
-                return updatedContent;
-            default:
-                console.log('writeToFile: returning unknown');
-                return '\nwriteToFile: unknown file path or tag';
-        }
+        await fs.writeFile(filePath, `${frontmatter}${body}`, 'utf8');
+        console.log(`writeToFile: ${tag} file written in ${folderChoice}`);
+        return folderChoice;
     } catch (err) {
-        console.error("Error writing to the file: ", err);
-    }
-}
+        console.error("error writing to the file; invalid tag or path: ", err);
+    };
+};
 
 // Main function which handles calling functions in the correct order and handles moving the note to the correct folder upon completion
 // TO DO
@@ -326,9 +335,10 @@ async function main(tp) {
     let content = tp.file.content;
     
     console.log('main: writing frontmatter and body to .md file with fs.');
-    content = await writeToFile(tp, title, frontmatter, body);
+    content = await writeToFile(tp, tag, title, frontmatter, body);
     console.log('main: content written');
-    
+    console.log('main:\n', content);
+    /*
     console.log('main: moving file to correct folder');
 
     try {
@@ -341,13 +351,20 @@ async function main(tp) {
             case 'lemma':
             case 'proof':
             case 'theorem':
-                await tp.file.move("/Zettelkasten/" + title);
+                await tp.file.move("/Zettelkasten/Atomica/" + title);
+                console.log(`main: moved to /Zettelkasten/Atomica/${title}`);
             case 'subject':
                 await tp.file.move("/Zettelkasten/Subjects/" + title);
+                console.log(`main: moved to /Zettelkasten/Subjects/${title}`);
             case 'person':
                 await tp.file.move("/Zettelkasten/People/" + title);
+                console.log(`main: moved to /Zettelkasten/People/${title}`);
+            case 'institution':
+                await tp.file.move("/Zettelkasten/Institution/" + title);
+                console.log(`main: moved to /Zettelkasten/Institution/${title}`);
             case 'reference':
-                await tp.file.move("/Sources/" + title);
+                await tp.file.move("/References/" + title);
+                console.log(`main: moved to /Zettelkasten/References/${title}`);
             default:
                 console.log('main: returning unknown');
                 return '\nmain: unknown file path cannot move file to correct folder';
@@ -355,7 +372,7 @@ async function main(tp) {
     } catch (err) {
         console.error("main: error moving the file: ", err);
             }
-
+    */
     console.log('main: completed');
 }
 

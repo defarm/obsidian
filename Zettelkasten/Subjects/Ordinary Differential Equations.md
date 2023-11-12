@@ -7,6 +7,6 @@ tags:
 Equations involving derivatives of a function with respect to a single variable. They are fundamental to the modeling of many natural phenomena.
 #### Links:
 [[Calculus with Analytic Geometry]]
-[[Cracking the gre Mathematics Subject Test]]
-[[Sources/Ordinary Differential Equations]]
+[[Cracking the GRE Mathematics Subject Test]]
+[[Zettelkasten/References/Ordinary Differential Equations]]
 [[The Organic Chemistry Tutor]]
