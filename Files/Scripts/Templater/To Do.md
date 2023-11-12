@@ -19,4 +19,4 @@
 >		- [ ] unique title check
 >		- [ ] debug console error: filename already exists
 >	- [ ] Bugs
->		- [ ] Notes are not being saved in the correct space.
+>		- [x] Notes are not being saved in the correct space.

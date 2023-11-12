@@ -1,12 +1,17 @@
+###### Atomica:
 #axiom
 #concept
 #corollary
 #definition
 #formula
-#institution
 #lemma
-#person
 #proof
-#reference
-#subject
 #theorem
+###### Institutions
+#institution
+###### People
+#person
+###### References
+#reference
+###### Subjects
+#subject
