@@ -3057,6 +3057,8 @@ techniques
 tag
 trimmed
 textbooks
+trying
+testing
 definition
 differential
 dy
@@ -4444,6 +4446,7 @@ dod
 default
 descriptions
 details
+dashboard
 id
 is
 irrational
@@ -7647,6 +7650,7 @@ simple
 sent
 specific
 structure
+shortcuts
 Definition
 Differential
 Dover
@@ -9005,6 +9009,7 @@ DHM
 DUC
 Due
 Depending
+Dataview
 Suppose
 Such
 Source
@@ -10475,6 +10480,10 @@ Scripts
 System
 Script
 Similarly
+Suite
+Still
+Style
+Settings
 If
 It
 In
@@ -13316,6 +13325,7 @@ fairly
 future
 free
 formatting
+functionality
 equation
 elements
 element
@@ -22069,6 +22079,7 @@ characters
 create
 confuses
 collected
+custom
 or
 one
 onto
@@ -23630,6 +23641,7 @@ offer
 options
 once
 originate
+out
 no
 new
 non
@@ -33881,6 +33893,7 @@ Website
 Wikimedia
 Wikipedia
 Wiki
+Works
 More
 Major
 Minor
@@ -35308,6 +35321,7 @@ MZP
 MRH
 MaJjnY
 Maps
+Mostly
 rigorously
 result
 relation
@@ -38286,6 +38300,7 @@ Title
 Topology
 There
 These
+Theme
 line
 lines
 layman
@@ -45596,6 +45611,7 @@ Attribution
 Alias
 API
 Atomica
+AnuPpuccin
 Let
 Length
 Leduc
@@ -46923,6 +46939,7 @@ LTa
 LYu
 LoxD
 License
+Latex
 just
 jh
 jV
@@ -60052,6 +60069,7 @@ Commons
 Choose
 Content
 Created
+Completr
 Pollard
 Plane
 Properties
@@ -61381,6 +61399,7 @@ PSkE
 Predictor
 PRC
 People
+Plugins
 Harry
 How
 Hostetler
@@ -64001,6 +64020,7 @@ Notes
 New
 Note
 Name
+Not
 YZ
 Yn
 YmT
@@ -66897,6 +66917,7 @@ QsH
 Quf
 QOj
 QcP
+Quick
 kg
 kS
 ks
@@ -72918,6 +72939,7 @@ JMQOk
 JgPOv
 JMUE
 JavaScript
+Just
 Xmi
 Xd
 Xj

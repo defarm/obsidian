@@ -16,7 +16,17 @@ as creating a new note from the template also creates an `Untitled` file in `/ma
 #### Title:
 Name the note. This is fairly straightforward, I wouldn't recommend any special characters, as I'm not sure how the code will handle it. This may be updated in the future.
 #### Tag:
-Choose the kind of note to create. The script uses the list of tags [[Tags|here]].
+Choose the kind of note to create and where it goes.
+###### Atomica:
+#axiom #concept #corollary #definition #formula #lemma #proof #theorem
+###### Institutions
+#institution
+###### People
+#person
+###### References
+#reference
+###### Subjects
+#subject
 
 Feel free to add more tags as you see fit, but understand that the script will not be able to parse anything without being edited. As time goes on, more tags may be added in the file, with additional handling. Due to the `Completr` plugin, a single space is added to the end of a tag once it has been entered. This confuses the script and ends up returning the default case. Because of this, any whitespace in a tag is trimmed.
 #### Subject:
