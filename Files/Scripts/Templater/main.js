@@ -31,8 +31,8 @@ async function getTag(tp) {
     } catch (err) {
         console.error('Error reading tags file:', err);
         return '\ngetTag: unknown tag';
-    }
-}
+    };
+};
 
 // Gets the subject from the Subjects folder using tp.system.suggester().
 // TO DO
@@ -60,8 +60,8 @@ async function getSubject(tp) {
     } catch (err) {
         console.error('Error reading directory:', err);
         return '\ngetSubject: unknown subject';
-    }
-}
+    };
+};
 
 // Gets the reference from the References folder using tp.system.suggester().
 // TO DO
@@ -88,53 +88,50 @@ async function getReference(tp) {
     } catch (err) {
         console.error('Error reading directory:', err);
         return '\ngetReference: unknown reference';
-    }
-}
+    };
+};
 
 // Creates a new reference on #reference tag selection in getTag
 // TO DO
 // input, error handling
-async function createReference(tp, tag, id, title, subject) {
+async function createReference(tp, tag, id, title, subject, alias) {
     // for all
-    const attribution = ""; // author/s; may need special handling since list
-    const copyright = ""; // date
-    const medium = ""; // literal
-    const dateOfEntry = ""; // date entered into Obsidian
+    const attribution = await tp.system.prompt("Attribution:"); // author/s; may need special handling since list
+    const copyright = await tp.system.prompt("Copyright:") // date
+    const medium = await tp.system.prompt("Medium:") // literal
+    const dateOfEntry = await tp.file.creation_date("YYYY-MM-DD"); // date entered into Obsidian
 
     // if book
-    const publisher = ""; // literal
-    const edition = ""; // literal
-    const isbn = ""; // literal
+    const publisher = await tp.system.prompt("Publisher:"); // literal
+    const edition = await tp.system.prompt("Edition:"); // literal
+    const isbn = await tp.system.prompt("ISBN:"); // literal
 
     // if website
-    const siteName = ""; // literal name
-    const siteUrl = ""; // literal URL
+    const siteName = await tp.system.prompt("Site Name:") // literal name
+    const siteUrl = await tp.system.prompt("URL:") // literal URL
     
     // if article
-    const publication = ""; // literal
-    const volumeNo = ""; // literal
-    const issue = ""; // literal
-    const pageRange = ""; // format: ppX-Y; may need special handling since list (?)
+    const publication = await tp.system.prompt("Publication:") // literal
+    const volumeNo = await tp.system.prompt("Volume Number:") // literal
+    const issue = await tp.system.prompt("Issue:") // literal
+    // const pageRange = ""; // format: ppX-Y; may need special handling since list (?)
     
     // misc info
     const contact = ""; // literal; most direct; // may need special handling since list (?)
     const downloadDate = ""; // YYYYMMDD
     const license = ""; // from "/Files/Licenses/" (not yet implemented)
-    const aliases = ""; // may need special handling since list (?)
     
-    const frontmatter = `---\ntags: ${tag}\nid: ${id}\ntitle: ${title}\nsubject: "[[${subject}]]"\nattribution: ${attribution}\ncopyright: ${copyright}\nmedium: ${medium}\ndateOfEntry: ${dateOfEntry}\npublisher: ${publisher}\nedition: ${edition}\nisbn: ${isbn}\nsiteName: ${siteName}\nsiteUrl: ${siteUrl}\npublication: ${publication}\nvolumerNo: ${volumeNo}
-    issue: ${issue}\npageRange: ${pageRange}
-    contact: ${contact}\ndownloadDate:${downloadDate}\nlicense: ${license}\naliases: ${aliases}\n---\n`;
+    const frontmatter = `---\ntags:\n  - ${await tag}\nid: ${id}\ntitle: ${await title}\nsubject: "[[${await subject}]]"\nattribution: "${await attribution}"\ncopyright: "${await copyright}"\nmedium: "${await medium}"\ndateOfEntry: "${await dateOfEntry}"\npublisher: "${publisher}"\nedition: "${await edition}"\nisbn: "${await isbn}"\nsiteName: "${await siteName}"\nsiteUrl: "${await siteUrl}"\npublication: "${await publication}"\nvolumerNo: "${await volumeNo}"\nissue: "${issue}"\ncontact: "${await contact}"\ndownloadDate: "${await downloadDate}"\nlicense: "${await license}"\nalias: "${await alias}"\n---\n`;
 
     return frontmatter
-}
+};
 
 // Creates a new institution file on #institution tag selection in getTag
 // TO TO
 // All of it
 async function createInstitution(tp, tag, id, title) {
 
-}
+};
 
 // Generates the frontmatter for a new note by tag
 // TO DO
@@ -151,6 +148,14 @@ async function generateFrontmatter(tp, tag, title) {
     console.log('generateFrontmatter: tag ', tag);
     console.log('generateFrontmatter: checking tag case');
 
+    console.log('generateFrontmatter: calling getSubject');
+    const subject = await getSubject(tp);
+    console.log('generateFrontmatter: returned subject\n', subject);
+
+    console.log('generateFrontmatter: getting alias');
+    const alias = await tp.system.prompt("Alias: ");
+    console.log('generateFronmatter: returned alias\n:', alias);
+
     let frontMatter;
     console.log(`generateFrontmatter: generating ${tag} frontMatter`);
     // tags alphabetized and divided by cases
@@ -163,30 +168,21 @@ async function generateFrontmatter(tp, tag, title) {
         case 'lemma':
         case 'proof':
         case 'theorem':
-            console.log('generateFrontmatter: calling getSubject');
-            const subject = await getSubject(tp);
-            console.log('generateFrontmatter: returned subject\n', subject);
-
             console.log('generateFrontmatter: calling getReference');
             const reference = await getReference(tp);
             console.log('generateFrontmatter: returned reference\n', reference);
 
-            frontMatter = `---\ntags:\n  - ${tag}\nid: ${id}\nsubject: "[[${await subject}]]"\nreference: "[[${await reference}]]"\nalias: ""\n---\n`;
+            frontMatter = `---\ntags:\n  - ${tag}\nid: ${id}\nsubject: "[[${await subject}]]"\nreference: "[[${await reference}]]"\nalias: "${await alias}"\n---\n`;
             break;
         case 'institution':
-            console.error('generateFrontmatter: createInstitution not yet implemented');
+            console.error('generateFrontmatter: createInstitution not yet implemented'); // since atomica calls for the reference, in what cases are institutions called? people? issue is that if 'institution' calls createInstitution, then how is it handled if only the note related to one is needed?
             break;
         case 'person':
             frontMatter = `---\ntags:\n  - ${tag}\id: ${id}\ndob: \ndod: \ninstitution: \nfield: \nwebsite: \ncontact: \n---\n`;
             break;
         case 'reference':
-            console.error('generateFrontmatter: createReference not yet implemented');
-            /*
-            console.log('generateFrontmatter: reference; calling createReference');
-            const referenceFrontmatter = await createReference(tp, tag, id, title, subject);
-            console.log('generateFrontmatter: returning reference frontmatter from createReference');
-            return referenceFrontmatter;
-            */
+            console.log('generateFrontmatter: returned subject\n', subject);
+            frontMatter = await createReference(tp, tag, id, title, subject, alias);
             break;
         case 'subject':
             frontMatter = `---\ntags:\n  - ${tag}\id: ${id}\n---\n`;
@@ -209,7 +205,7 @@ async function generateBody(tp, tag) {
     let body; 
     console.log('generateBody: checking tag case: ', tag);
     console.log(`generateBody: updating body to ${tag}`);
-    // tags alphabetized    
+    // tags alphabetized
     switch (tag) {
         case 'axiom':
             body = `### Fact:\n`;
@@ -265,7 +261,6 @@ async function writeToFile(tp, tag, title, frontmatter, body) {
     console.log('writeToFile: starting');
     console.log(`writeToFile: parameters:\ntag:\n${tag}\ntitle: ${title}\nfrontmatter:\n${frontmatter}\nbody:\n${body}`);
     let folderChoice;
-
     switch (tag) {
         case 'axiom':
         case 'concept':
@@ -310,7 +305,6 @@ async function writeToFile(tp, tag, title, frontmatter, body) {
 // unique title check, debug console error filename already exists
 async function main(tp) {
     console.log('main: starting');
-
     console.log('main: getting title');
     const title = await tp.system.prompt("Title: ", "");
     
@@ -324,7 +318,7 @@ async function main(tp) {
     console.log('main: letting frontmatter');
     let frontmatter;
     console.log('main: calling generateFrontmatter');
-    frontmatter = await generateFrontmatter(tp, tag);
+    frontmatter = await generateFrontmatter(tp, tag, title);
 
     console.log('main: letting body');
     let body;

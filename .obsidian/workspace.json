@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Files/README.md",
+                "file": "Zettelkasten/References/Real Analysis Flashcards.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Files/README.md",
+                "file": "Zettelkasten/References/Real Analysis Flashcards.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Files/README.md",
+                "file": "Zettelkasten/References/Real Analysis Flashcards.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Files/README.md"
+                "file": "Zettelkasten/References/Real Analysis Flashcards.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Files/README.md"
+                "file": "Zettelkasten/References/Real Analysis Flashcards.md"
               }
             }
           }
@@ -169,11 +169,15 @@
   },
   "active": "1796b3732e036906",
   "lastOpenFiles": [
+    "Zettelkasten/References/TEST.md",
+    "Zettelkasten/References/Real Analysis Flashcards.md",
+    "Zettelkasten/Information/To Do.md",
+    "Zettelkasten/Atomica/ALIAS.md",
+    "Zettelkasten/Atomica/ALIAS TEST.md",
+    "Zettelkasten/Atomica/TEST.md",
     "Zettelkasten/Information/Tags.md",
     "Files/README.md",
     "Files/Scripts/Templater/To Do.md",
-    "Zettelkasten/Information/To Do.md",
-    "Zettelkasten/Atomica/TEST.md",
     "Zettelkasten/References/Wikipedia.md",
     "Templates/New Note.md",
     "Untitled.md",
@@ -191,10 +195,6 @@
     "Zettelkasten/Atomica/!COROLLARY.md",
     "Untitled 1.md",
     "Zettelkasten/Atomica/!AXIOM.md",
-    "Zettelkasten/Atomica/Boundedness.md",
-    "Zettelkasten/References/Calculus with Analytic Geometry.md",
-    "Zettelkasten/Atomica/AXIOM TEST.md",
-    "Zettelkasten/Atomica/AXIOM TEST 2.md",
     "Sources",
     "Zettelkasten/Institution",
     "Files/PDF Files/AMSstyleguide.pdf",
