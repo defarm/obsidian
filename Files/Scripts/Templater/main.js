@@ -8,6 +8,7 @@ console.log('tp: initiliazed ', to);
 // TO DO
 // remedy absolute path variable to tp.app.vault
 // update fs to tp
+// tp whitespace control
 async function getTag(tp) {
     try {
         console.log('getTag: starting');
@@ -37,6 +38,7 @@ async function getTag(tp) {
 // Gets the subject from the Subjects folder using tp.system.suggester().
 // TO DO
 // remedy absolute path variable to tp.app.vault
+// add multiple subjects at note creation
 async function getSubject(tp) {
     try {
         console.log('getSubject: starting');
@@ -66,6 +68,7 @@ async function getSubject(tp) {
 // Gets the reference from the References folder using tp.system.suggester().
 // TO DO
 // remedy absolute path variable to tp.app.vault
+// add functionality to use [[REFERENCE#SECTION^HEX]] linking structure using tp.file.include for the contents of the reference.
 async function getReference(tp) {
     try {
         console.log('getReference: starting');
@@ -128,7 +131,7 @@ async function createReference(tp, tag, id, title, subject, alias) {
 
 // Creates a new institution file on #institution tag selection in getTag
 // TO TO
-// All of it
+// Figure out how to reconcile this function with calling the #institution tag
 async function createInstitution(tp, tag, id, title) {
 
 };
