@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/References/Real Analysis Flashcards.md",
+                "file": "Zettelkasten/Information/To Do.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Zettelkasten/References/Real Analysis Flashcards.md",
+                "file": "Zettelkasten/Information/To Do.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Zettelkasten/References/Real Analysis Flashcards.md",
+                "file": "Zettelkasten/Information/To Do.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Zettelkasten/References/Real Analysis Flashcards.md"
+                "file": "Zettelkasten/Information/To Do.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Zettelkasten/References/Real Analysis Flashcards.md"
+                "file": "Zettelkasten/Information/To Do.md"
               }
             }
           }
@@ -169,8 +169,9 @@
   },
   "active": "1796b3732e036906",
   "lastOpenFiles": [
-    "Zettelkasten/References/TEST.md",
+    "Zettelkasten/Information/Dataview.md",
     "Zettelkasten/References/Real Analysis Flashcards.md",
+    "Zettelkasten/References/TEST.md",
     "Zettelkasten/Information/To Do.md",
     "Zettelkasten/Atomica/ALIAS.md",
     "Zettelkasten/Atomica/ALIAS TEST.md",
@@ -194,7 +195,6 @@
     "Untitled 2.md",
     "Zettelkasten/Atomica/!COROLLARY.md",
     "Untitled 1.md",
-    "Zettelkasten/Atomica/!AXIOM.md",
     "Sources",
     "Zettelkasten/Institution",
     "Files/PDF Files/AMSstyleguide.pdf",

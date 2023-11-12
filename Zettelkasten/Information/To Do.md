@@ -1,8 +1,16 @@
-JavaScript code for:
-- [x] Subject choices
-- [x] Source file generation
-- [ ] Alias implementation
-	- [ ] sources
-	- [ ] subjects
-	- [ ] people
-	- [ ] notes
+- [ ] JavaScript code for:
+	- [x] Subject choices
+	- [x] Source file generation
+	- [ ] Alias implementation
+		- [ ] sources
+		- [ ] subjects
+		- [ ] people
+		- [ ] notes
+- [ ] Plugins
+	- [ ] Dataview dashboard
+		- [ ] Most recently edited
+		- [ ] Counts
+		- [ ] Types
+		- [ ] Set as home
+	- [ ] Calendar
+	- [ ] [Spaced Repetition](https://github.com/st3v3nmw/obsidian-spaced-repetition)
