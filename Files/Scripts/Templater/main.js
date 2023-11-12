@@ -332,41 +332,6 @@ async function main(tp) {
     content = await writeToFile(tp, tag, title, frontmatter, body);
     console.log('main: content written');
     console.log('main:\n', content);
-    /*
-    console.log('main: moving file to correct folder');
-
-    try {
-        switch (tag) {
-            case 'axiom':
-            case 'concept':
-            case 'corollary':
-            case 'definition':
-            case 'formula':
-            case 'lemma':
-            case 'proof':
-            case 'theorem':
-                await tp.file.move("/Zettelkasten/Atomica/" + title);
-                console.log(`main: moved to /Zettelkasten/Atomica/${title}`);
-            case 'subject':
-                await tp.file.move("/Zettelkasten/Subjects/" + title);
-                console.log(`main: moved to /Zettelkasten/Subjects/${title}`);
-            case 'person':
-                await tp.file.move("/Zettelkasten/People/" + title);
-                console.log(`main: moved to /Zettelkasten/People/${title}`);
-            case 'institution':
-                await tp.file.move("/Zettelkasten/Institution/" + title);
-                console.log(`main: moved to /Zettelkasten/Institution/${title}`);
-            case 'reference':
-                await tp.file.move("/References/" + title);
-                console.log(`main: moved to /Zettelkasten/References/${title}`);
-            default:
-                console.log('main: returning unknown');
-                return '\nmain: unknown file path cannot move file to correct folder';
-        }
-    } catch (err) {
-        console.error("main: error moving the file: ", err);
-            }
-    */
     console.log('main: completed');
 }
 
