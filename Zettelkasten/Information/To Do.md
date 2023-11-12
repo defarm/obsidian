@@ -1,11 +1,15 @@
-- [ ] JavaScript code for:
+- [ ] JavaScript:
 	- [x] Subject choices
 	- [x] Source file generation
-	- [ ] Alias implementation
+	- [x] Alias implementation
 		- [ ] sources
 		- [ ] subjects
 		- [ ] people
 		- [ ] notes
+	- [ ] File organization
+		- [ ] Combine theorems/lemmas/corollaries and proofs.
+			- [ ] Should #proof still exist?
+				- [ ] Boolean in properties if there is one?
 - [ ] Plugins
 	- [ ] Dataview dashboard
 		- [ ] Most recently edited
@@ -14,3 +18,6 @@
 		- [ ] Set as home
 	- [ ] Calendar
 	- [ ] [Spaced Repetition](https://github.com/st3v3nmw/obsidian-spaced-repetition)
+	- [ ] $\LaTeX$
+		- [ ] Include TeX formatting in links
+		- [ ] Implement some kind of [Detexify](https://forum.obsidian.md/t/latex-math-symbol-picker/12739) functionality

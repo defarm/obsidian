@@ -167,12 +167,21 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1796b3732e036906",
+  "active": "f3fe22173ee6f40a",
   "lastOpenFiles": [
+    "Files/PDF Files/symbols-a4.pdf",
+    "Files/symbols-a4.pdf",
+    "Zettelkasten/Atomica/Nested Intervals Theorem.md",
+    "Zettelkasten/Atomica/Single Limit at a Point.md",
+    "Zettelkasten/Information/To Do.md",
+    "Zettelkasten/Atomica/Intersection and Union of Closed Sets.md",
+    "Zettelkasten/Atomica/Intermediate Value Theorem.md",
+    "Zettelkasten/Atomica/Convergent Sequences are Cauchy.md",
+    "Zettelkasten/Atomica/Nonempty, Closed, and Bounded Subsets.md",
+    "Zettelkasten/Atomica/Field Axioms.md",
     "Zettelkasten/Information/Dataview.md",
     "Zettelkasten/References/Real Analysis Flashcards.md",
     "Zettelkasten/References/TEST.md",
-    "Zettelkasten/Information/To Do.md",
     "Zettelkasten/Atomica/ALIAS.md",
     "Zettelkasten/Atomica/ALIAS TEST.md",
     "Zettelkasten/Atomica/TEST.md",
@@ -187,14 +196,6 @@
     "Zettelkasten/Institutions/!INSTITUTION.md",
     "Untitled 8.md",
     "Untitled 7.md",
-    "Untitled 6.md",
-    "Zettelkasten/Institutions/TEST.md",
-    "Untitled 5.md",
-    "Untitled 4.md",
-    "Untitled 3.md",
-    "Untitled 2.md",
-    "Zettelkasten/Atomica/!COROLLARY.md",
-    "Untitled 1.md",
     "Sources",
     "Zettelkasten/Institution",
     "Files/PDF Files/AMSstyleguide.pdf",
@@ -204,7 +205,6 @@
     "Files/LICENSE",
     "LICENSE",
     "Zettelkasten/People",
-    "Zettelkasten/Testing",
     "Untitled.canvas"
   ]
 }
