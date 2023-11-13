@@ -1,7 +1,7 @@
 ---
 tags:
   - definition
-id: "202311061505"
+id: 202311061505
 subject:
   - "[[Calculus]]"
 source:

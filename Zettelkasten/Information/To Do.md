@@ -9,9 +9,9 @@ Urgency denoted by **
 			- [ ] Lowercase
 			- [ ] When orphaned or not yet templated
 			- During add templates?
-	- [ ] Hotkey to select most recent word to turn it into a link (templater)
 - [ ] JavaScript
-	- [ ] Remedy absolute paths to tp.app.vault in:
+	- [ ] Checks files for words of known or created links and aliases and turns them into links. Called when? **
+	- [ ] Remedy absolute paths to tp.app.vault in: **
 		- [ ] getTag
 		- [ ] getSubject
 		- [ ] getSource
@@ -21,17 +21,21 @@ Urgency denoted by **
 	- [ ] main
 		- [ ] unique title check
 		- [ ] debug console error: filename already exists
-	- [ ] Replace Node.js File System module with Templater API
-	- [ ] getSource error handling
+	- [ ] Replace Node.js File System module with Templater API **
+	- [ ] getSource error handling **
 	- [ ] File organization
+		- [ ] Creation of untitled notes when `CTRL+SPACE` called.
 		- [ ] Combine theorems/lemmas/corollaries and proofs. **
 			- Should #proof still exist? Boolean in properties if there is one?
 		- [ ] Add questions, comments, etc. **
 			- Boolean values in properties if true
 		- [ ] Add multiple aliases split by commas
 		- [ ] For new notes, offer the option for an explanation, notation, and proof
-- [ ] Python
-	- [ ] Parser for titles, checks lowercase stop words. Calls whenever a new note is created. (Probably better to add to JS for consistency using tp.file.rename)
+		- [ ] Check if link to citation or a specific chapter ?
+	- [ ] Parser for titles, checks lowercase stop words. Calls whenever a new note is created.
+	- [ ] Command to create link out of most recent word/s
+		- [ ] Mostly for workflow
+		- [ ] How to solve the multiple words issue?
 - [ ] Plugins
 	- [ ] Dataview dashboard
 		- [ ] Most recently edited
@@ -50,6 +54,6 @@ Urgency denoted by **
 - [ ] Git
 	- [ ] Automate backup
 		- [ ] Ensure does not push private
-- [ ] Private
+- [ ] Private **
 	- [ ] Add research, work, assignments Maps of Content **
 	- [ ] Ensure they are not pushed with Git

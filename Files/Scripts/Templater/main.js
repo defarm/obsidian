@@ -131,7 +131,7 @@ async function createReference(tp, tag, id, title, subject, alias) {
 
 // Creates a new institution file on #institution tag selection in getTag
 // TO TO
-// Figure out how to reconcile this function with calling the #institution tag
+// Figure out how to reconcile this function with calling the #institution tag.
 async function createInstitution(tp, tag, id, title) {
 
 };

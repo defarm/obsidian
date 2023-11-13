@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Zettelkasten/Information/To Do.md",
+                "file": "Zettelkasten/Information/Dataview.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "LaTeX",
+                "query": "",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Zettelkasten/Information/To Do.md",
+                "file": "Zettelkasten/Information/Dataview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Zettelkasten/Information/To Do.md",
+                "file": "Zettelkasten/Information/Dataview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Zettelkasten/Information/To Do.md"
+                "file": "Zettelkasten/Information/Dataview.md"
               }
             }
           },
@@ -145,7 +145,7 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Zettelkasten/Information/To Do.md"
+                "file": "Zettelkasten/Information/Dataview.md"
               }
             }
           }
@@ -154,7 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 327.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,34 +167,36 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1796b3732e036906",
+  "active": "f3fe22173ee6f40a",
   "lastOpenFiles": [
-    "Files/PDF Files/symbols-a4.pdf",
-    "Files/README.md",
-    "Zettelkasten/Information/To Do.md",
-    "Zettelkasten/Atomica/LaTeX.md",
-    "Templates/New Note.md",
-    "Zettelkasten/Information/Organization.md",
-    "Files/Scripts/Templater/To Do.md",
+    "Zettelkasten/Assignments",
+    "Zettelkasten/Research",
     "Zettelkasten/Information/Dataview.md",
-    "Zettelkasten/Information/Tags.md",
-    "Zettelkasten/Subjects/History of Mathematics.md",
-    "Zettelkasten/Subjects/Real Analysis.md",
-    "Zettelkasten/Atomica/Intermediate Value Theorem.md",
-    "Zettelkasten/Atomica/Maximum.md",
-    "maximum.md",
-    "Zettelkasten/Atomica/Quadratic Formula.md",
-    "Zettelkasten/Atomica/Convergence of a Series with a Finite Radius of Convergence.md",
-    "Convergent Series.md",
-    "uniform Convergence.md",
-    "Zettelkasten/Atomica/Difference Quotient.md",
-    "Zettelkasten/Atomica/Convergent Sequences are Cauchy.md",
-    "Zettelkasten/Atomica/Difference of a Constant.md",
+    "Zettelkasten/Atomica/Completeness Axiom.md",
+    "Zettelkasten/Atomica/Bounded.md",
+    "Zettelkasten/Atomica/Convergence.md",
+    "Zettelkasten/Atomica/Divergence.md",
     "Zettelkasten/Atomica/Equality of Power Series.md",
-    "Zettelkasten/Atomica/Cauchy Sequence.md",
-    "Zettelkasten/Atomica/Boundedness.md",
+    "Zettelkasten/Atomica/Implicit Function.md",
+    "Zettelkasten/Atomica/Inverse Functions.md",
+    "Zettelkasten/Atomica/Nested Intervals Theorem.md",
+    "Zettelkasten/Atomica/Subsequence.md",
+    "Zettelkasten/Atomica/Single Limit at an Accumulation Point.md",
     "Zettelkasten/Atomica/Series of Repeated Derivatives.md",
-    "Zettelkasten/Atomica/Uniform Convergence of Series of Derivatives.md",
+    "Zettelkasten/Atomica/Sentential Connectives.md",
+    "Zettelkasten/Atomica/Recurrence Relations.md",
+    "Zettelkasten/Atomica/Power Series.md",
+    "Zettelkasten/Atomica/Order Axioms.md",
+    "Zettelkasten/Atomica/Nonempty, Closed, and Bounded Subsets.md",
+    "Zettelkasten/Atomica/Intermediate Value Theorem.md",
+    "Zettelkasten/Atomica/Irrational Number.md",
+    "Zettelkasten/Atomica/Integrating Series of Uniform Convergence.md",
+    "Zettelkasten/Atomica/Initial Value Problems.md",
+    "Zettelkasten/Atomica/Explicit Solution.md",
+    "Zettelkasten/Atomica/Field Axioms.md",
+    "Zettelkasten/Atomica/Function.md",
+    "Zettelkasten/Atomica/Function of One Independent Variable.md",
+    "Files/PDF Files/symbols-a4.pdf",
     "Files/symbols-a4.pdf",
     "Sources",
     "Zettelkasten/Institution",
@@ -203,7 +205,6 @@
     "Zettelkasten/Atomica",
     "Zettelkasten/Institutions",
     "Files/LICENSE",
-    "LICENSE",
     "Untitled.canvas"
   ]
 }

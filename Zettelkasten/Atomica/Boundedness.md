@@ -14,3 +14,4 @@ aliases:
 A [[Region]] is said to be [[bounded]] if there is a circle which will enclose it.
 
 Given this definition and the one pertaining to regions, we can define [[functions]] of three or more independent variables.
+
