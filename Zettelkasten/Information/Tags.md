@@ -1,3 +1,7 @@
+---
+tags:
+  - hidden
+---
 #axiom
 #concept
 #corollary

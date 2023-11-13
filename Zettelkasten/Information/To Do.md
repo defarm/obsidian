@@ -1,15 +1,37 @@
-- [ ] JavaScript:
-	- [x] Subject choices
-	- [x] Source file generation
-	- [x] Alias implementation
-		- [ ] sources
-		- [ ] subjects
-		- [ ] people
-		- [ ] notes
+---
+tags:
+  - hidden
+---
+Urgency denoted by **
+- [ ] Obsidian
+	- [ ] Graph view
+		- [ ] Resolve links
+			- [ ] Lowercase
+			- [ ] When orphaned or not yet templated
+			- During add templates?
+	- [ ] Hotkey to select most recent word to turn it into a link (templater)
+- [ ] JavaScript
+	- [ ] Remedy absolute paths to tp.app.vault in:
+		- [ ] getTag
+		- [ ] getSubject
+		- [ ] getSource
+		- [ ] writeToFile
+		- [ ] createSource
+		- [ ] createInstitution
+	- [ ] main
+		- [ ] unique title check
+		- [ ] debug console error: filename already exists
+	- [ ] Replace Node.js File System module with Templater API
+	- [ ] getSource error handling
 	- [ ] File organization
-		- [ ] Combine theorems/lemmas/corollaries and proofs.
-			- [ ] Should #proof still exist?
-				- [ ] Boolean in properties if there is one?
+		- [ ] Combine theorems/lemmas/corollaries and proofs. **
+			- Should #proof still exist? Boolean in properties if there is one?
+		- [ ] Add questions, comments, etc. **
+			- Boolean values in properties if true
+		- [ ] Add multiple aliases split by commas
+		- [ ] For new notes, offer the option for an explanation, notation, and proof
+- [ ] Python
+	- [ ] Parser for titles, checks lowercase stop words. Calls whenever a new note is created. (Probably better to add to JS for consistency using tp.file.rename)
 - [ ] Plugins
 	- [ ] Dataview dashboard
 		- [ ] Most recently edited
@@ -19,5 +41,15 @@
 	- [ ] Calendar
 	- [ ] [Spaced Repetition](https://github.com/st3v3nmw/obsidian-spaced-repetition)
 	- [ ] $\LaTeX$
+		- [ ] Shortcuts **
+			- [ ] Infinite series: \isum = \sum_{n=0}^{\infty}
+			- [ ] Blackboard Font: bb{A} = \mathbb{A}
 		- [ ] Include TeX formatting in links
 		- [ ] Implement some kind of [Detexify](https://forum.obsidian.md/t/latex-math-symbol-picker/12739) functionality
+		- [ ] Implement logic notation
+- [ ] Git
+	- [ ] Automate backup
+		- [ ] Ensure does not push private
+- [ ] Private
+	- [ ] Add research, work, assignments Maps of Content **
+	- [ ] Ensure they are not pushed with Git

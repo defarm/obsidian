@@ -33,7 +33,6 @@
       "key": "PageDown"
     }
   ],
-  "templater-obsidian:create-new-note-from-template": [],
   "templater-obsidian:Templates/\"New Note.md\"": [
     {
       "modifiers": [
@@ -46,10 +45,11 @@
   "templater-obsidian:Templates/New Note.md": [
     {
       "modifiers": [
-        "Alt",
-        "Shift"
+        "Mod"
       ],
-      "key": "Q"
+      "key": " "
     }
-  ]
+  ],
+  "obsidian-completr:completr-open-suggestion-popup": [],
+  "templater-obsidian:create-new-note-from-template": []
 }

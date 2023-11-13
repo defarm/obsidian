@@ -1,11 +1,11 @@
 {
-  "collapse-filter": false,
-  "search": "",
+  "collapse-filter": true,
+  "search": "-tag:#hidden  ",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
   "showOrphans": true,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "tag:#axiom",
@@ -88,13 +88,13 @@
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": false,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
+  "nodeSizeMultiplier": 1.50364583333333,
+  "lineSizeMultiplier": 1.50364583333333,
+  "collapse-forces": true,
+  "centerStrength": 0.296875,
+  "repelStrength": 20,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.3003387451171875,
-  "close": false
+  "linkDistance": 500,
+  "scale": 0.03955078125,
+  "close": true
 }

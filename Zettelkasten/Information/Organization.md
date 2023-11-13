@@ -1,3 +1,7 @@
+---
+tags:
+  - hidden
+---
 1. Metadata
 	1. ID is the date and time as one string.
 	2. Tag is the type of note

@@ -1,9 +1,9 @@
 ---
 tags:
-  - corollary
-id: 20231112151137
+  - definition
+id: 20231112191122
 subject: "[[Real Analysis]]"
 reference: "[[Real Analysis Flashcards]]"
 alias: ""
 ---
-### Insight:
+### Definition:
