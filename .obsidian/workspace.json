@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "0c9d465504ca155d",
+        "id": "b1c974641e658978",
         "type": "tabs",
         "children": [
           {
-            "id": "1796b3732e036906",
+            "id": "f640f57bd9b72827",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Zettelkasten/Information/Dataview.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -48,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "infini",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,7 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 412.5
+    "width": 200
   },
   "right": {
     "id": "bcd890f43ba86c71",
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Zettelkasten/Information/Dataview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Zettelkasten/Information/Dataview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Zettelkasten/Information/Dataview.md"
-              }
+              "state": {}
             }
           },
           {
@@ -144,9 +136,7 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "Zettelkasten/Information/Dataview.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -154,7 +144,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 327.5
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,44 +158,44 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "f3fe22173ee6f40a",
+  "active": "f640f57bd9b72827",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Zettelkasten/Atomica/TEST1.md",
+    "Zettelkasten/Atomica/TEST2.md",
+    "Untitled 3.md",
+    "Untitled 2.md",
+    "Untitled 1.md",
+    "Templates/New Note.md",
+    "Zettelkasten/Atomica/TEST.md",
+    "asdf.md",
+    "Zettelkasten/Atomica/Tending to Infinity.md",
+    "if and only if.md",
+    "Zettelkasten/Atomica/Logical Equivalence.md",
+    "Zettelkasten/Atomica/Divergence.md",
+    "statement.md",
+    "infinity.md",
+    "Zettelkasten/Atomica/Taylor Series.md",
+    "Zettelkasten/Atomica/Supremum.md",
+    "Zettelkasten/Atomica/Right Hand Limit.md",
+    "Zettelkasten/Atomica/Difference of a Constant.md",
+    "Zettelkasten/Atomica/Convergence.md",
+    "Zettelkasten/Atomica/Continuous on a Set.md",
+    "Zettelkasten/Atomica/Logic Table.md",
+    "Zettelkasten/Atomica/Disjunction.md",
+    "Information/To Do.md",
+    "Information/Tags.md",
+    "Zettelkasten/Atomica/Composition of Functions.md",
+    "Files/LaTeX/obsidian-latex-suite-snippets.txt",
+    "Files/Snippets",
+    "Files/LaTeX",
+    "Files/obsidian-latex-suite-snippets.txt",
+    "Files/Scripts/Python/json_parse.py",
     "Zettelkasten/Public/NOTICE",
     "Zettelkasten/Public/test",
     "Zettelkasten/Public",
     "Zettelkasten/Assignments",
     "Zettelkasten/Research",
-    "Zettelkasten/Information/Dataview.md",
-    "Zettelkasten/Atomica/Completeness Axiom.md",
-    "Zettelkasten/Atomica/Bounded.md",
-    "Zettelkasten/Atomica/Convergence.md",
-    "Zettelkasten/Atomica/Divergence.md",
-    "Zettelkasten/Atomica/Equality of Power Series.md",
-    "Zettelkasten/Atomica/Implicit Function.md",
-    "Zettelkasten/Atomica/Inverse Functions.md",
-    "Zettelkasten/Atomica/Nested Intervals Theorem.md",
-    "Zettelkasten/Atomica/Subsequence.md",
-    "Zettelkasten/Atomica/Single Limit at an Accumulation Point.md",
-    "Zettelkasten/Atomica/Series of Repeated Derivatives.md",
-    "Zettelkasten/Atomica/Sentential Connectives.md",
-    "Zettelkasten/Atomica/Recurrence Relations.md",
-    "Zettelkasten/Atomica/Power Series.md",
-    "Zettelkasten/Atomica/Order Axioms.md",
-    "Zettelkasten/Atomica/Nonempty, Closed, and Bounded Subsets.md",
-    "Zettelkasten/Atomica/Intermediate Value Theorem.md",
-    "Zettelkasten/Atomica/Irrational Number.md",
-    "Zettelkasten/Atomica/Integrating Series of Uniform Convergence.md",
-    "Zettelkasten/Atomica/Initial Value Problems.md",
-    "Zettelkasten/Atomica/Explicit Solution.md",
-    "Zettelkasten/Atomica/Field Axioms.md",
-    "Zettelkasten/Atomica/Function.md",
-    "Zettelkasten/Atomica/Function of One Independent Variable.md",
-    "Files/PDF Files/symbols-a4.pdf",
-    "Files/symbols-a4.pdf",
-    "Sources",
-    "Zettelkasten/Institution",
-    "Files/PDF Files/AMSstyleguide.pdf",
-    "Files/PDF Files",
     "Untitled.canvas"
   ]
 }

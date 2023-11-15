@@ -9,4 +9,4 @@ aliases:
   - bounded subset
 ---
 ### Statement:
-If $S$ is a [[non-empty]], [[closed]], and [[bounded subset]] of $\mathbb{R}$, then $S$ has a [[maximum]] and [[minimum]].
+If $S$ is a [[non-empty]], [[closed]], and [[bounded subset]] of $\mathbb{R}$, then $S$ has a [[Minimum and Maximum]] and [[minimum]].

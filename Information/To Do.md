@@ -51,6 +51,7 @@ Urgency denoted by **
 		- [ ] Include TeX formatting in links
 		- [ ] Implement some kind of [Detexify](https://forum.obsidian.md/t/latex-math-symbol-picker/12739) functionality
 		- [ ] Implement logic notation
+		- [ ] Logic tables, probably ask GPT
 - [ ] Git
 	- [ ] Automate backup
 		- [ ] Ensure does not push private

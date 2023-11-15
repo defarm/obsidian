@@ -14,7 +14,7 @@ async function getTag(tp) {
         console.log('getTag: starting');
 
         // !! ABSOLUTE PATH BE SURE TO UPDATE IF THE STRUCTURE CHANGES !! //
-        const tagsFilePath = '/home/df/Obsidian/math/Zettelkasten/Information/Tags.md';
+        const tagsFilePath = '/home/df/Obsidian/math/Information/Tags.md';
 
         console.log('getTag: tags file path:\n', tagsFilePath);
         console.log('getTag: reading tags file');
@@ -335,6 +335,9 @@ async function main(tp) {
     content = await writeToFile(tp, tag, title, frontmatter, body);
     console.log('main: content written');
     console.log('main:\n', content);
+
+    // console.log('main: moving to correct note in Obsidian');
+
     console.log('main: completed');
 }
 

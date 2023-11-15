@@ -19,7 +19,10 @@ If a [[sequence]] $(s_n)$ or [[series]] $(a_n)$ does not [[Convergence|converge]
 		1. For every $M$ in the [[real|reals]], there is an $N$ such that for $n$ larger than $N$, then $(s_n)$ is larger than $M$. Notationally:
 $$ \forall M \in \mathbb{R},\ \exists N : n > N \implies s_{n}> M $$
 	2. To $-\infty$:
-		1. For every $M$ in the [[real|reals]], there is am $N$ such that for $n$ less than $N$, then $(s_{n})$ is less than $M$. Notationally:
+		1. For every $M$ in the [[real|reals]], there is am $N$ such t---
+tags:
+---
+hat for $n$ less than $N$, then $(s_{n})$ is less than $M$. Notationally:
 $$ \forall M \in \mathbb{R},\ \exists N: n < N \implies s_{n}< M $$
 4. Oscillating
 	1. A series may take on multiple subsequential limits or other non-convergent behavior. An example of this would be the function:$$f(x)=\cases{1\quad 0\equiv_{2}x \\

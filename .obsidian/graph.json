@@ -1,6 +1,6 @@
 {
   "collapse-filter": true,
-  "search": "-tag:#hidden  ",
+  "search": "-tag:hidden -file:\"New Note\"",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -95,6 +95,6 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 500,
-  "scale": 0.0263671875,
+  "scale": 0.059326171875,
   "close": true
 }
