@@ -1,8 +1,11 @@
 const fs = require('fs').promises;
-console.log('fs: initialized ', fs);
+console.log('fs: initialized\n', fs);
 
 const to = app.plugins.plugins['templater-obsidian'];
-console.log('tp: initiliazed ', to);
+console.log('tp: initiliazed\n', to);
+
+const mm = app.plugins.plugins["metadata-menu"].api;
+console.log('mm: initialized\n', mm);
 
 // Gets the tag from the file Tags.md in the Information folder. Also, slices the # so that the YAML frontmatter is sane.
 // TO DO
@@ -15,16 +18,11 @@ async function getTag(tp) {
 
         // !! ABSOLUTE PATH BE SURE TO UPDATE IF THE STRUCTURE CHANGES !! //
         const tagsFilePath = '/home/df/Obsidian/math/Information/Tags.md';
-
-        console.log('getTag: tags file path:\n', tagsFilePath);
-        console.log('getTag: reading tags file');
         const fileContent = await fs.readFile(tagsFilePath, 'utf8');
         const tags = fileContent.split('\n').filter(line => line.startsWith('#')).map(tag => tag.trim());
         console.log('getTag: tags ', tags);
         
         const chosenTag = await tp.system.suggester(tags, tags);
-        console.log('getTag: chosenTag ', chosenTag);
-        console.log('getTag: slicing leading #');
         const chosenTagSliced = chosenTag.slice(1).trim(); // Necessary for YAML frontmatter to be formatted correctly.
         console.log('getTag: returning chosenTag');
         return chosenTagSliced;
@@ -46,16 +44,11 @@ async function getSubject(tp) {
         // !! ABSOLUTE PATH BE SURE TO UPDATE IF THE STRUCTURE CHANGES !! //
         const subjectFilePath = '/home/df/Obsidian/math/Zettelkasten/Subjects/';
 
-        console.log('getSubject: absolute path:\n', subjectFilePath);
-
-        console.log('getSubject: reading fs');
         const files = await fs.readdir(subjectFilePath);
         const subjects = files.map(file => file.replace('.md', ''));
         console.log('getSubject: subjects ', subjects);
         
         const chosenSubject = await tp.system.suggester(subjects, subjects);
-        console.log('getSubject: chosenSubject ', chosenSubject);
-
         console.log('getSubject: returning chosenSubject');
         return chosenSubject;
 
@@ -74,17 +67,13 @@ async function getReference(tp) {
         console.log('getReference: starting');
 
         // !! ABSOLUTE PATH BE SURE TO UPDATE IF THE STRUCTURE CHANGES !! //
-        const referenceFilePath = '/home/df/Obsidian/math/Zettelkasten/References/';
-        console.log('getReference: absolute path:\n', referenceFilePath);
+        const referenceFilePath = tp.file.path(true);//'/home/df/Obsidian/math/Zettelkasten/References/';
 
-        console.log('getReference: reading fs');
         const files = await fs.readdir(referenceFilePath);
         const references = files.map(file => file.replace('.md', ''));
         console.log('getReference: references ', references);
         
         const chosenReference = await tp.system.suggester(references, references);
-        console.log('getReference: chosenReference ', chosenReference);
-
         console.log('getReference: returning chosenReference');
         return chosenReference;
 
@@ -94,39 +83,84 @@ async function getReference(tp) {
     };
 };
 
-// Creates a new reference on #reference tag selection in getTag
+async function createSubject(tp, mm, filepath, tag, id, title) {
+
+};
+
+// Creates a new reference. Called by generateFrontmatter if tag is #reference. Calls on Metadata Menu to insert a payload of frontmatter to the note.
 // TO DO
 // input, error handling
-async function createReference(tp, tag, id, title, subject, alias) {
-    // for all
-    const attribution = await tp.system.prompt("Attribution:"); // author/s; may need special handling since list
-    const copyright = await tp.system.prompt("Copyright:") // date
-    const medium = await tp.system.prompt("Medium:") // literal
-    const dateOfEntry = await tp.file.creation_date("YYYY-MM-DD"); // date entered into Obsidian
+async function createReference(tp, mm, filePath) { // , tag, id, title, subject, alias) {
+    const fieldsPayload = [
+        {
+            name: "Attribution",
+            payload: {value: await tp.system.prompt("Attribution:")}
+        },
+        {
+            name: "Copyright",
+            payload: {value: await tp.system.prompt("Copyright:")}
+        },
+        {
+            name: "Medium",
+            payload: {value: await tp.system.prompt("Medium:")}
+        },
+        {
+            name: "Date of Entry",
+            payload: {value: await tp.file.creation_date("YYYY-MM-DD")}
+        },
+        {
+            name: "Publisher",
+            payload: {value: await tp.system.prompt("Publisher:")}
+        },
+        {
+            name: "Edition",
+            payload: {value: await tp.system.prompt("Edition:")}
+        },
+        {
+            name: "ISBN",
+            payload: {value: await tp.system.prompt("ISBN:")}
+        },
+        {
+            name: "Website Name",
+            payload: {value: await tp.system.prompt("Website Name:")}
+        },
+        {
+            name: "Website URL",
+            payload: {value: await tp.system.prompt("Website URL:")}
+        },
+        {
+            name: "Publication",
+            payload: {value: await tp.system.prompt("Publication:")}
+        },
+        {
+            name: "Vol No",
+            payload: {value: await tp.system.prompt("Vol No:")}
+        },
+        {
+            name: "Issue",
+            payload: {value: await tp.system.prompt("Issue:")}
+        },
+        {
+            name: "Contact",
+            payload: {value: ""}
+        },
+        {
+            name: "Download Date",
+            payload: {value: ""}
+        },
+        {
+            name: "License",
+            payload: {value: ""}
+        },
+    ];
 
-    // if book
-    const publisher = await tp.system.prompt("Publisher:"); // literal
-    const edition = await tp.system.prompt("Edition:"); // literal
-    const isbn = await tp.system.prompt("ISBN:"); // literal
-
-    // if website
-    const siteName = await tp.system.prompt("Site Name:") // literal name
-    const siteUrl = await tp.system.prompt("URL:") // literal URL
-    
-    // if article
-    const publication = await tp.system.prompt("Publication:") // literal
-    const volumeNo = await tp.system.prompt("Volume Number:") // literal
-    const issue = await tp.system.prompt("Issue:") // literal
-    // const pageRange = ""; // format: ppX-Y; may need special handling since list (?)
-    
-    // misc info
-    const contact = ""; // literal; most direct; // may need special handling since list (?)
-    const downloadDate = ""; // YYYYMMDD
-    const license = ""; // from "/Files/Licenses/" (not yet implemented)
-    
-    const frontmatter = `---\ntags:\n  - ${await tag}\nid: ${id}\ntitle: ${await title}\nsubject: "[[${await subject}]]"\nattribution: "${await attribution}"\ncopyright: "${await copyright}"\nmedium: "${await medium}"\ndateOfEntry: "${await dateOfEntry}"\npublisher: "${publisher}"\nedition: "${await edition}"\nisbn: "${await isbn}"\nsiteName: "${await siteName}"\nsiteUrl: "${await siteUrl}"\npublication: "${await publication}"\nvolumerNo: "${await volumeNo}"\nissue: "${issue}"\ncontact: "${await contact}"\ndownloadDate: "${await downloadDate}"\nlicense: "${await license}"\nalias: "${await alias}"\n---\n`;
-
-    return frontmatter
+    console.log('createReference: posting values at:\n', filePath);
+    try {
+        await mm.postValues(filePath, fieldsPayload);
+        console.log('createReference: payload posted');
+    } catch (err) {
+        console.error("createReference: error posting payload", err);
+    };
 };
 
 // Creates a new institution file on #institution tag selection in getTag
@@ -140,28 +174,43 @@ async function createInstitution(tp, tag, id, title) {
 // TO DO
 // link to createReference
 // institution
-async function generateFrontmatter(tp, tag, title) {
-    // title is called in case 'reference':
+async function generateFrontmatter(tp, mm, filePath, tag) {
     console.log('generateFrontmatter: starting');
-
-    console.log('generateFrontmatter: tp.file.creation_date as id');
+    console.log('generateFrontmatter: filepath:\n', filePath);
+    
     const id = tp.file.creation_date("YYYYMMDDHHMMss");
     console.log('generateFrontmatter: id ', id);
 
     console.log('generateFrontmatter: tag ', tag);
     console.log('generateFrontmatter: checking tag case');
 
-    console.log('generateFrontmatter: calling getSubject');
     const subject = await getSubject(tp);
     console.log('generateFrontmatter: returned subject\n', subject);
 
-    console.log('generateFrontmatter: getting alias');
     const alias = await tp.system.prompt("Alias: ");
-    console.log('generateFronmatter: returned alias\n:', alias);
+    console.log('generateFrontmatter: returned alias:\n', alias);
 
-    let frontMatter;
-    console.log(`generateFrontmatter: generating ${tag} frontMatter`);
-    // tags alphabetized and divided by cases
+    console.log(`generateFrontmatter: generating mm fields payload for ${tag}.`);
+    const fieldsPayload = [
+        {
+            name: "tags",
+            payload: { value: tag }
+        },
+        {
+            name: "id",
+            payload: { value: id }
+        },
+        {
+            name: "subject",
+            payload: { value: subject}
+        },
+        {
+            name: "alias",
+            payload: {value: alias}
+        }
+    ];
+    console.log('generateFrontmatter: payload:\n', fieldsPayload);
+
     switch (tag) {
         case 'axiom':
         case 'concept':
@@ -171,38 +220,38 @@ async function generateFrontmatter(tp, tag, title) {
         case 'lemma':
         case 'proof':
         case 'theorem':
-            console.log('generateFrontmatter: calling getReference');
             const reference = await getReference(tp);
             console.log('generateFrontmatter: returned reference\n', reference);
 
-            frontMatter = `---\ntags:\n  - ${tag}\nid: ${id}\nsubject: "[[${await subject}]]"\nreference: "[[${await reference}]]"\nalias: "${await alias}"\n---\n`;
+            console.log('generateFrontmatter: posting values at:\n', filePath);
+            try {
+                await mm.postValues(filePath, fieldsPayload);
+                console.log('generateFrontmatter: payload posted');
+            } catch (err) {
+                console.error("generateFrontmatter: error posting payload", err);
+            };
             break;
         case 'institution':
-            console.error('generateFrontmatter: createInstitution not yet implemented'); // since atomica calls for the reference, in what cases are institutions called? people? issue is that if 'institution' calls createInstitution, then how is it handled if only the note related to one is needed?
+            console.error('generateFrontmatter: createInstitution not yet implemented');
             break;
         case 'person':
-            frontMatter = `---\ntags:\n  - ${tag}\id: ${id}\ndob: \ndod: \ninstitution: \nfield: \nwebsite: \ncontact: \n---\n`;
+            console.log('generateFrontmatter: person not defined yet');
             break;
         case 'reference':
-            console.log('generateFrontmatter: returned subject\n', subject);
-            frontMatter = await createReference(tp, tag, id, title, subject, alias);
+            await createReference(tp, mm, filePath);
+            // console.log('generateFrontmatter: reference under construction');
             break;
         case 'subject':
-            frontMatter = `---\ntags:\n  - ${tag}\id: ${id}\n---\n`;
+            console.log('generateFrontmatter: subject not defined yet');
             break;
         default:
             console.log('generateFrontmatter: returning unknown');
             return '\ngenerateFrontmatter: unknown';
         };
-    console.log('generateFrontmatter: returning frontMatter');
-    console.log('generateFrontmatter:\n', frontMatter);
-    return frontMatter;
 };
 
 // Generates body of note by tag
 // TO DO
-// institution
-// change fs to tp
 async function generateBody(tp, tag) {
     console.log('generateBody: starting');
     let body; 
@@ -211,40 +260,40 @@ async function generateBody(tp, tag) {
     // tags alphabetized
     switch (tag) {
         case 'axiom':
-            body = `### Fact:\n`;
+            body = `### Fact:\n\n\n### Questions:\n\n\n### Comments:\n`;
             break;
         case 'concept':
-            body = `### Explanation:\n`;
+            body = `### Explanation:\n\n\n### Questions:\n\n\n### Comments:\n`;
             break;
         case 'corollary':
-            body = `### Insight:\n`;
+            body = `### Insight:\n\n\n### Questions:\n\n\n### Comments:\n`;
             break;
         case 'definition':
-            body = `### Definition:\n`;
+            body = `### Definition:\n\n\n### Questions:\n\n\n### Comments:\n`;
             break;
         case 'formula':
-            body = `### Formula:\n\n\n### Derivation:\n`;
+            body = `### Formula:\n\n\n### Derivation:\n\n\n### Questions:\n\n\n### Comments:\n`;
             break;
         case 'institution':
             body - `### Notes:\n`
             break;
         case 'lemma':
-            body = `### Statement:\n`;
+            body = `### Statement:\n\n\n### Proof:\n\n\n### Questions:\n\n\n### Comments:\n`;
             break;
         case 'person':
             body = `### Bio:\n`;
             break;
         case 'proof':
-            body = `### Hypothesis:\n\n\n### Supporting Arguments:\n\n\n### Proof:\n`;
+            body = `### Hypothesis:\n\n\n### Supporting Arguments:\n\n\n### Proof:\n\n\n### Questions:\n\n\n### Comments:\n`;
             break;
         case 'reference':
             body = `### Contents\n`;
             break;
         case 'subject':
-            body = '### Explanation:\n\n\n### Links:\n';
+            body = `### Explanation:\n\n\n### Links:\n\n\n### Questions:\n\n\n### Comments:\n`;
             break;
         case 'theorem':
-            body = `### Statement:\n`;
+            body = `### Statement:\n\n\n### Proof:\n\n\n### Questions:\n\n\n### Comments:\n`;
             break;
         default:
             console.log('generateBody: returning unknown');
@@ -255,14 +304,11 @@ async function generateBody(tp, tag) {
     return body;
 };
 
-// Writes the frontmatter and body content to the note being created by tag. Utilizes fs.writeFile (should use tp for ease of use for others)
+// Moves the titular note to the correct folder based on tag type.
 // TO DO
-// reconcile absolute path with tp.app.vault
-// implement tp.app.vault.write() ?
-// institution
-async function writeToFile(tp, tag, title, frontmatter, body) {
-    console.log('writeToFile: starting');
-    console.log(`writeToFile: parameters:\ntag:\n${tag}\ntitle: ${title}\nfrontmatter:\n${frontmatter}\nbody:\n${body}`);
+async function moveToLocation(tp, tag, title) {
+    console.log('moveToLocation: starting');
+
     let folderChoice;
     switch (tag) {
         case 'axiom':
@@ -288,16 +334,15 @@ async function writeToFile(tp, tag, title, frontmatter, body) {
             folderChoice = "References";
             break;
         default:
-            console.log('writeToFile: returning unknown');
-            return '\nwriteToFile: unknown file path or tag for folderChoice';
+            console.log('moveToLocation: location unknown');
+            return '\nmoveToLocation: unknown file path or tag for folderChoice';
     };
-    console.log('writeToFile: choosing ', folderChoice);
-    const filePath = `/home/df/Obsidian/math/Zettelkasten/${folderChoice}/${title}.md`;
-    console.log('writeToFile: writing to file with fs.writeFile');
+    const filePath = await `/Zettelkasten/${folderChoice}/${title}`.replace(".md", "");
+    
     try {
-        await fs.writeFile(filePath, `${frontmatter}${body}`, 'utf8');
-        console.log(`writeToFile: ${tag} file written in ${folderChoice}`);
-        return folderChoice;
+        await tp.file.move(filePath);
+        console.log('moveToLocation: moved to:\n', filePath);
+        return tp.file.path(filePath);
     } catch (err) {
         console.error("error writing to the file; invalid tag or path: ", err);
     };
@@ -308,37 +353,56 @@ async function writeToFile(tp, tag, title, frontmatter, body) {
 // unique title check, debug console error filename already exists
 async function main(tp) {
     console.log('main: starting');
+
     console.log('main: getting title');
     const title = await tp.system.prompt("Title: ", "");
-    
-    // console.log('main: checking uniqueness of title'); // Not sure where the error is coming from, but it doesn't seem to be breaking the app.
     console.log('main: title ', title);
     
+    console.log('main: renaming');
+    await tp.file.rename(title);
+
     console.log('main: calling getTag');
     const tag = await getTag(tp);
-    console.log('main: returned tag ', tag);
+    console.log('main: returned chosen tag ', tag);
+ 
+    console.log('main: moving to location');
+    filePath = await moveToLocation(tp, tag, title);
+    console.log('main: returned file path:', filePath);
     
     console.log('main: letting frontmatter');
     let frontmatter;
     console.log('main: calling generateFrontmatter');
-    frontmatter = await generateFrontmatter(tp, tag, title);
+    frontmatter = await generateFrontmatter(tp, mm, filePath, tag, title);
 
-    console.log('main: letting body');
-    let body;
-    console.log('main: calling generateBody');
-    body = await generateBody(tp, tag);
+    console.log('main: metadata menu conversion');
 
-    console.log('main: pulling up file content');
-    let content = tp.file.content;
-    
-    console.log('main: writing frontmatter and body to .md file with fs.');
-    content = await writeToFile(tp, tag, title, frontmatter, body);
-    console.log('main: content written');
-    console.log('main:\n', content);
+
+    // console.log('main: letting body');
+    // let body;
+    // console.log('main: calling generateBody');
+    // body = await generateBody(tp, tag);
+
+    // tp.file.cursor_append(frontmatter + body);
+
+    // console.log('main: getting current content')
+    // const currentContent = await tp.file.content;
+    // console.log('main: current content:\n', currentContent)
+
+
+    // console.log('main: pulling up file content');
+    // let content = frontmatter + body
+    // console.log('main: content:\n', content)
+    // tp.file.content = content;
+
+    // content = frontmatter + body;
+    // console.log('main: writing frontmatter and body to .md file with fs.');
+    // content = await writeToFile(tp, active_file, tag, title, frontmatter, body);
+    // console.log('main: content written');
+    // console.log('main: content\n', content);
 
     // console.log('main: moving to correct note in Obsidian');
 
     console.log('main: completed');
-}
+};
 
 module.exports = main;

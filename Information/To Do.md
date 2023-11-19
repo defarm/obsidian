@@ -11,7 +11,7 @@ Urgency denoted by **
 			- During add templates?
 - [ ] JavaScript
 	- [ ] Checks files for words of known or created links and aliases and turns them into links. Called when? **
-	- [ ] Remedy absolute paths to tp.app.vault in: **
+	- [ ] Remedy absolute paths to tp.app.vault in: ** *?* **
 		- [ ] getTag
 		- [ ] getSubject
 		- [ ] getSource
@@ -24,13 +24,13 @@ Urgency denoted by **
 	- [ ] Replace Node.js File System module with Templater API **
 	- [ ] getSource error handling **
 	- [ ] File organization
-		- [ ] Creation of untitled notes when `CTRL+SPACE` called.
-		- [ ] Combine theorems/lemmas/corollaries and proofs. **
+		- [x] Creation of untitled notes when `CTRL+SPACE` called.
+		- [x] Combine theorems/lemmas/corollaries and proofs. **
 			- Should #proof still exist? Boolean in properties if there is one?
 		- [ ] Add questions, comments, etc. **
 			- Boolean values in properties if true
 		- [ ] Add multiple aliases split by commas
-		- [ ] For new notes, offer the option for an explanation, notation, and proof
+		- [x] For new notes, offer the option for an explanation, notation, and proof
 		- [ ] Check if link to citation or a specific chapter ?
 	- [ ] Parser for titles, checks lowercase stop words. Calls whenever a new note is created.
 	- [ ] Command to create link out of most recent word/s
@@ -45,16 +45,16 @@ Urgency denoted by **
 	- [ ] Calendar
 	- [ ] [Spaced Repetition](https://github.com/st3v3nmw/obsidian-spaced-repetition)
 	- [ ] $\LaTeX$
-		- [ ] Shortcuts **
-			- [ ] Infinite series: \isum = \sum_{n=0}^{\infty}
-			- [ ] Blackboard Font: bb{A} = \mathbb{A}
+		- [x] Shortcuts **
+			- [x] Infinite series: \isum = \sum_{n=0}^{\infty}
+			- [x] Blackboard Font: bb{A} = \mathbb{A}
 		- [ ] Include TeX formatting in links
-		- [ ] Implement some kind of [Detexify](https://forum.obsidian.md/t/latex-math-symbol-picker/12739) functionality
+		- [ ] Implement some kind of [Detexify](https://forum.obsidian.md/t/latex-math-symbol-picker/12739) functionality or insertion database
 		- [ ] Implement logic notation
 		- [ ] Logic tables, probably ask GPT
 - [ ] Git
 	- [ ] Automate backup
 		- [ ] Ensure does not push private
 - [ ] Private **
-	- [ ] Add research, work, assignments Maps of Content **
-	- [ ] Ensure they are not pushed with Git
+	- [x] Add research, work, assignments Maps of Content **
+	- [x] Ensure they are not pushed with Git

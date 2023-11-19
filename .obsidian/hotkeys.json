@@ -59,5 +59,30 @@
       ],
       "key": " "
     }
+  ],
+  "3d-graph:open-3d-graph-global": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "3"
+    }
+  ],
+  "3d-graph:open-3d-graph-local": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "D"
+    }
+  ],
+  "insert-template": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": " "
+    }
   ]
 }

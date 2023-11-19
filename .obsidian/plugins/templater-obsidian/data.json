@@ -12,11 +12,11 @@
   "enable_system_commands": false,
   "shell_path": "/bin/bash",
   "user_scripts_folder": "Files/Scripts/Templater",
-  "enable_folder_templates": false,
+  "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "",
-      "template": ""
+      "folder": "Templates",
+      "template": "Templates/New Note.md"
     }
   ],
   "syntax_highlighting": true,

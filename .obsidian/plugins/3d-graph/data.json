@@ -1,0 +1,28 @@
+{
+  "filters": {
+    "doShowOrphans": true,
+    "doShowAttachments": false
+  },
+  "groups": {
+    "groups": [
+      {
+        "query": "tag:#definition",
+        "color": "#8f3d3d"
+      },
+      {
+        "query": "tag:#theorem",
+        "color": "#852378"
+      },
+      {
+        "query": "tag:#hidden",
+        "color": "rgb(167, 156, 176)"
+      }
+    ]
+  },
+  "display": {
+    "nodeSize": 3,
+    "linkThickness": 1,
+    "particleSize": 2,
+    "particleCount": 2
+  }
+}

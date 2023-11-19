@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "b1c974641e658978",
+        "id": "11de11b81083c827",
         "type": "tabs",
         "children": [
           {
-            "id": "f640f57bd9b72827",
+            "id": "594ad6bb37402940",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {}
             }
           }
@@ -44,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "infini",
+                "query": "",
                 "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -144,8 +144,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 354.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,44 +157,44 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "f640f57bd9b72827",
+  "active": "594ad6bb37402940",
   "lastOpenFiles": [
+    "Zettelkasten/Atomica/First Order Linear Differential Equation.md",
+    "Zettelkasten/Atomica/Carbon Dating.md",
+    "Zettelkasten/Atomica/Boundedness.md",
+    "Zettelkasten/Atomica/Antecedant and Consequent.md",
+    "Zettelkasten/Atomica/Absolute Value.md",
     "Untitled.md",
-    "Zettelkasten/Atomica/TEST1.md",
-    "Zettelkasten/Atomica/TEST2.md",
-    "Untitled 3.md",
-    "Untitled 2.md",
-    "Untitled 1.md",
-    "Templates/New Note.md",
-    "Zettelkasten/Atomica/TEST.md",
-    "asdf.md",
-    "Zettelkasten/Atomica/Tending to Infinity.md",
-    "if and only if.md",
-    "Zettelkasten/Atomica/Logical Equivalence.md",
-    "Zettelkasten/Atomica/Divergence.md",
-    "statement.md",
-    "infinity.md",
-    "Zettelkasten/Atomica/Taylor Series.md",
-    "Zettelkasten/Atomica/Supremum.md",
-    "Zettelkasten/Atomica/Right Hand Limit.md",
-    "Zettelkasten/Atomica/Difference of a Constant.md",
-    "Zettelkasten/Atomica/Convergence.md",
-    "Zettelkasten/Atomica/Continuous on a Set.md",
-    "Zettelkasten/Atomica/Logic Table.md",
-    "Zettelkasten/Atomica/Disjunction.md",
+    "Zettelkasten/References/RTEST.md",
+    "Zettelkasten/References/RTEST1.md",
+    "TEST.md",
+    "Zettelkasten/References/TEST.md",
     "Information/To Do.md",
-    "Information/Tags.md",
-    "Zettelkasten/Atomica/Composition of Functions.md",
+    "Zettelkasten/References/REF TEST.md",
+    "Zettelkasten/Atomica/Uniform Convergence.md",
+    "TEST.md.md",
+    "TEST4.md.md",
+    "Zettelkasten/Atomica/TEST5.md",
+    "TEST3.md.md",
+    "TEST2.md.md",
+    "TEST1.md.md",
+    "Zettelkasten/Atomica/TEST.md",
+    "TEST10.md.md",
+    "TEST9.md.md",
+    "TEST8.md.md",
+    "TEST7.md.md",
+    "TEST6.md.md",
+    "TEST5.md.md",
+    "Files/Scripts/main-debug.js",
+    ".md",
+    "home/df/Obsidian/math/Zettelkasten/Atomica",
+    "home/df/Obsidian/math/Zettelkasten",
+    "home/df/Obsidian/math",
+    "home/df/Obsidian",
+    "home/df",
+    "home",
+    "Untitled.canvas",
     "Files/LaTeX/obsidian-latex-suite-snippets.txt",
-    "Files/Snippets",
-    "Files/LaTeX",
-    "Files/obsidian-latex-suite-snippets.txt",
-    "Files/Scripts/Python/json_parse.py",
-    "Zettelkasten/Public/NOTICE",
-    "Zettelkasten/Public/test",
-    "Zettelkasten/Public",
-    "Zettelkasten/Assignments",
-    "Zettelkasten/Research",
-    "Untitled.canvas"
+    "Files/Snippets"
   ]
 }

@@ -5,5 +5,8 @@
   "obsidian-style-settings",
   "obsidian-completr",
   "latex-matrices",
-  "obsidian-latex-suite"
+  "obsidian-latex-suite",
+  "obsidian-desmos",
+  "obsidian-linter",
+  "metadata-menu"
 ]
