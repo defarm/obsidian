@@ -169,6 +169,7 @@
   },
   "active": "2e6d5eeafc15c69f",
   "lastOpenFiles": [
+<<<<<<< HEAD
     "Untitled 1.canvas",
     "Untitled.canvas",
     "Zettelkasten/References/Test.md",
@@ -205,11 +206,49 @@
     "Zettelkasten/Research",
     "Zettelkasten/Institutions",
     "Zettelkasten/People",
+=======
+    "Untitled.canvas",
+    "Zettelkasten/Atomica/Power Series.md",
+    "Zettelkasten/Atomica/Proper Integral.md",
+    "Zettelkasten/Atomica/Upper and Lower Bound.md",
+    "Zettelkasten/Atomica/Minimum and Maximum.md",
+    "Zettelkasten/Atomica/Bounded.md",
+    "Zettelkasten/Atomica/Supremum.md",
+    "Information/Dataview.md",
+    "Information/Tags.md",
+    "Information/Organization.md",
+    "Files/README.md",
+    "Zettelkasten/Atomica/First Order Linear Differential Equation.md",
+    "Zettelkasten/Atomica/Carbon Dating.md",
+    "Zettelkasten/Atomica/Boundedness.md",
+    "Zettelkasten/Atomica/Antecedant and Consequent.md",
+    "Zettelkasten/Atomica/Absolute Value.md",
+    "Untitled.md",
+    "Zettelkasten/References/RTEST.md",
+    "Zettelkasten/References/RTEST1.md",
+    "TEST.md",
+    "Zettelkasten/References/TEST.md",
+    "Information/To Do.md",
+    "Zettelkasten/References/REF TEST.md",
+    "Zettelkasten/Atomica/Uniform Convergence.md",
+    "TEST.md.md",
+    "TEST4.md.md",
+    "Files/Scripts/main-debug.js",
+>>>>>>> aa4b6b7ce5deec147d3ed166c7ac1ce5d19cdab9
     ".md",
     "Files/Math and Physics Flash Cards - Underdown",
     "Files/Scripts/main-debug.js",
     "home/df/Obsidian/math/Zettelkasten/Atomica",
     "home/df/Obsidian/math/Zettelkasten",
+<<<<<<< HEAD
     "home/df/Obsidian/math"
+=======
+    "home/df/Obsidian/math",
+    "home/df/Obsidian",
+    "home/df",
+    "home",
+    "Files/LaTeX/obsidian-latex-suite-snippets.txt",
+    "Files/Snippets"
+>>>>>>> aa4b6b7ce5deec147d3ed166c7ac1ce5d19cdab9
   ]
 }

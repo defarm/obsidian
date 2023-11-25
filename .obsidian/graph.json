@@ -11,49 +11,49 @@
       "query": "tag:#axiom",
       "color": {
         "a": 1,
-        "rgb": 13943560
+        "rgb": 16733986
       }
     },
     {
       "query": "tag:#concept",
       "color": {
         "a": 1,
-        "rgb": 16743168
+        "rgb": 2201331
       }
     },
     {
       "query": "tag:#corollary",
       "color": {
         "a": 1,
-        "rgb": 12881441
+        "rgb": 9159498
       }
     },
     {
       "query": "tag:#definition",
       "color": {
         "a": 1,
-        "rgb": 9784585
+        "rgb": 10241456
       }
     },
     {
       "query": "tag:#formula",
       "color": {
         "a": 1,
-        "rgb": 16711680
+        "rgb": 16761095
       }
     },
     {
       "query": "tag:#lemma",
       "color": {
         "a": 1,
-        "rgb": 4116598
+        "rgb": 48340
       }
     },
     {
       "query": "tag:#person",
       "color": {
         "a": 1,
-        "rgb": 14725458
+        "rgb": 7951688
       }
     },
     {
@@ -67,7 +67,7 @@
       "query": "tag:#reference",
       "color": {
         "a": 1,
-        "rgb": 16724923
+        "rgb": 15277667
       }
     },
     {
@@ -81,7 +81,7 @@
       "query": "tag:#theorem",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 38536
       }
     }
   ],
@@ -95,6 +95,11 @@
   "repelStrength": 20,
   "linkStrength": 1,
   "linkDistance": 500,
+<<<<<<< HEAD
   "scale": 0.13880287509692557,
   "close": true
+=======
+  "scale": 0.0889892578125,
+  "close": false
+>>>>>>> aa4b6b7ce5deec147d3ed166c7ac1ce5d19cdab9
 }
