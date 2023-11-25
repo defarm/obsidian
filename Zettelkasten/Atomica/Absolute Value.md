@@ -3,8 +3,8 @@ tags:
   - definition
 id: 20231113121129
 subject: "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
-alias: "abs"
+reference: "[[Underdown Flashcards]]"
+alias: abs
 ---
 ### Definition:
 If $x \in \mathbb{R}$, then the absolute value of $x$, denoted $|x|$, is defined as:

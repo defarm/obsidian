@@ -3,8 +3,8 @@ tags:
   - corollary
 id: 20231112151157
 subject: "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
-alias: "closed sets"
+reference: "[[Underdown Flashcards]]"
+alias: closed sets
 ---
 ### Insight:
 1. The [[intersection]] of any collection of [[closed sets]] is closed.

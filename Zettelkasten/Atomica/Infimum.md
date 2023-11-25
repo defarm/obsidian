@@ -3,8 +3,8 @@ tags:
   - definition
 id: 20231114121144
 subject: "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
-alias: "greatest lower bound"
+reference: "[[Underdown Flashcards]]"
+alias: greatest lower bound
 ---
 ### Definition:
 ### Definition:

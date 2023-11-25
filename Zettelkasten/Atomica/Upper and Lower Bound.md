@@ -3,8 +3,8 @@ tags:
   - definition
 id: 20231113111125
 subject: "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
-alias: "bounds"
+reference: "[[Underdown Flashcards]]"
+alias: bounds
 ---
 ### Definition:
 Let $S$ be a [[subset]] of $\mathbb{R}$.

@@ -3,7 +3,7 @@ tags:
   - definition
 id: 20231114111152
 subject: "[[Logic]]"
-reference: "[[Real Analysis Flashcards]]"
+reference: "[[Underdown Flashcards]]"
 alias: ""
 ---
 ### Definition:

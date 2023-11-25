@@ -33,3 +33,5 @@ aliases:
 1. The Cartesian Plane and Functions; 1
 2. Limits and Their Properties; 64
 3. Differentiation; 110
+
+[[Trigonometric Functions]]

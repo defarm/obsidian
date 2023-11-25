@@ -4,7 +4,7 @@ tags:
 id: 20231112151118
 subject:
   - "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
+reference: "[[Underdown Flashcards]]"
 aliases:
   - bounded subset
 ---

@@ -2,9 +2,10 @@
 tags:
   - formula
 id: 20231112191105
-subject: "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
-alias: ""
+subject:
+  - "[[Calculus]]"
+reference: "[[Underdown Flashcards]]"
+aliases:
 ---
 ### Motivation:
 Finds the solutions or [[roots]] of the [[quadratic equation]] $ax^2+bx+c=0$.

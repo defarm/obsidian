@@ -3,7 +3,7 @@ tags:
   - corollary
 id: 20231112161118
 subject: "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
+reference: "[[Underdown Flashcards]]"
 alias: ""
 ---
 ### Insight:

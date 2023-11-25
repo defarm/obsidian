@@ -3,7 +3,7 @@ tags:
   - axiom
 id: 20231108161126
 subject: "[[Real Analysis]]"
-source: "[[Real Analysis Flashcards]]"
+source: "[[Underdown Flashcards]]"
 ---
 ### Fact:
 - [[Trichotomic]]:

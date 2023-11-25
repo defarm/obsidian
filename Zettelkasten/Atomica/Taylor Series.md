@@ -3,8 +3,8 @@ tags:
   - definition
 id: 20231114181103
 subject: "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
-alias: "taylor"
+reference: "[[Underdown Flashcards]]"
+alias: taylor
 ---
 ### Definition:
 If $f$ has derivatives of all [[order|orders]] in a [[neighborhood]] of $x_0$, then the [[limit]] of the [[taylor polynomials]] is an [[infinite series]] called the **Taylor series** of $f$ at $x_0$. Notationally:

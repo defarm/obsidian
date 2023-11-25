@@ -2,6 +2,7 @@
 tags:
   - hidden
 ---
+#assignment
 #axiom
 #concept
 #corollary

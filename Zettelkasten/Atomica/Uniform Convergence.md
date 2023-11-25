@@ -4,7 +4,7 @@ tags:
 id: 20231114121106
 subject:
   - "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
+reference: "[[Underdown Flashcards]]"
 aliases:
   - converge uniformly
   - converges uniformly

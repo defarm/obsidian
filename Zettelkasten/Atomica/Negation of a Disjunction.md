@@ -4,7 +4,7 @@ tags:
 id: 20231113161149
 subject:
   - "[[Logic]]"
-reference: "[[Real Analysis Flashcards]]"
+reference: "[[Underdown Flashcards]]"
 aliases:
   - not or
 ---

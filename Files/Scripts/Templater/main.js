@@ -67,7 +67,7 @@ async function getReference(tp) {
         console.log('getReference: starting');
 
         // !! ABSOLUTE PATH BE SURE TO UPDATE IF THE STRUCTURE CHANGES !! //
-        const referenceFilePath = tp.file.path(true);//'/home/df/Obsidian/math/Zettelkasten/References/';
+        const referenceFilePath = '/home/df/Obsidian/math/Zettelkasten/References/';
 
         const files = await fs.readdir(referenceFilePath);
         const references = files.map(file => file.replace('.md', ''));
@@ -90,8 +90,8 @@ async function createSubject(tp, mm, filepath, tag, id, title) {
 // Creates a new reference. Called by generateFrontmatter if tag is #reference. Calls on Metadata Menu to insert a payload of frontmatter to the note.
 // TO DO
 // input, error handling
-async function createReference(tp, mm, filePath) { // , tag, id, title, subject, alias) {
-    const fieldsPayload = [
+async function createReference(tp, mm, filePath, genMeta) { // , tag, id, title, subject, alias) {
+    fieldsPayload = [
         {
             name: "Attribution",
             payload: {value: await tp.system.prompt("Attribution:")}
@@ -154,6 +154,8 @@ async function createReference(tp, mm, filePath) { // , tag, id, title, subject,
         },
     ];
 
+	fieldsPayload = genMeta.concat(fieldsPayload)
+	
     console.log('createReference: posting values at:\n', filePath);
     try {
         await mm.postValues(filePath, fieldsPayload);
@@ -191,7 +193,7 @@ async function generateFrontmatter(tp, mm, filePath, tag) {
     console.log('generateFrontmatter: returned alias:\n', alias);
 
     console.log(`generateFrontmatter: generating mm fields payload for ${tag}.`);
-    const fieldsPayload = [
+    fieldsPayload = [
         {
             name: "tags",
             payload: { value: tag }
@@ -202,7 +204,7 @@ async function generateFrontmatter(tp, mm, filePath, tag) {
         },
         {
             name: "subject",
-            payload: { value: subject}
+            payload: { value: `[[${subject}]]`}
         },
         {
             name: "alias",
@@ -220,9 +222,9 @@ async function generateFrontmatter(tp, mm, filePath, tag) {
         case 'lemma':
         case 'proof':
         case 'theorem':
-            const reference = await getReference(tp);
+            reference = await getReference(tp);
             console.log('generateFrontmatter: returned reference\n', reference);
-
+            fieldsPayload = fieldsPayload.concat([{name: "reference", payload: {value: `[[${reference}]]`}}]);
             console.log('generateFrontmatter: posting values at:\n', filePath);
             try {
                 await mm.postValues(filePath, fieldsPayload);
@@ -238,7 +240,7 @@ async function generateFrontmatter(tp, mm, filePath, tag) {
             console.log('generateFrontmatter: person not defined yet');
             break;
         case 'reference':
-            await createReference(tp, mm, filePath);
+            await createReference(tp, mm, filePath, fieldsPayload);
             // console.log('generateFrontmatter: reference under construction');
             break;
         case 'subject':
@@ -376,13 +378,12 @@ async function main(tp) {
 
     console.log('main: metadata menu conversion');
 
-
-    // console.log('main: letting body');
-    // let body;
-    // console.log('main: calling generateBody');
-    // body = await generateBody(tp, tag);
-
-    // tp.file.cursor_append(frontmatter + body);
+    console.log('main: letting body');
+    let body;
+    console.log('main: calling generateBody');
+    body = await generateBody(tp, tag);
+    tp.config.active_file;
+	tp.file.cursor_append(body);
 
     // console.log('main: getting current content')
     // const currentContent = await tp.file.content;

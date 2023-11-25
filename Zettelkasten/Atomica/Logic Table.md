@@ -17,6 +17,8 @@ The [[logic]] tables below are of common [[statements]] and their [[logical equi
 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 
 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
 
+^0c30a8
+
 ### Negations
 | $P$ | $Q$ | $\neg P$ | $\neg Q$ | $\neg (p \wedge q)$ | $\neg(p) \vee \neg (q)$ | $p \implies q$ | $\neg q \implies \neg p$ |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -35,4 +37,7 @@ The [[logic]] tables below are of common [[statements]] and their [[logical equi
 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 1 |
 | 1 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 1 |
 | 1 | 1 | 0 | 1 | 0 | 1 | 0 | 0 | 1 |
+
+^f37f7d
+
 where $\mathfrak{D}: \{P, Q, R, S\}$

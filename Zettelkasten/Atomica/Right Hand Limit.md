@@ -3,8 +3,8 @@ tags:
   - definition
 id: 20231114181143
 subject: "[[Real Analysis]]"
-reference: "[[Real Analysis Flashcards]]"
-alias: "rhl"
+reference: "[[Underdown Flashcards]]"
+alias: rhl
 ---
 ### Definition:
 Let $f: (a,b) \to \mathbb{R}$, then the **right hand limit** of $f$ at $a$ is denoted:

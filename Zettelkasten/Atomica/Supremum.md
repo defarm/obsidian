@@ -5,7 +5,7 @@ id: "202309181448"
 subject:
   - "[[Real Analysis]]"
 source:
-  - "[[Real Analysis Flashcards#^73a36a|Underdown]]"
+  - "[[Underdown Flashcards#^73a36a|Underdown]]"
 aliases:
   - least upper bound
 ---

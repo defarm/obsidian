@@ -4,7 +4,7 @@ tags:
 id: 20231113161135
 subject:
   - "[[Logic]]"
-reference: "[[Real Analysis Flashcards]]"
+reference: "[[Underdown Flashcards]]"
 aliases:
   - Hypothesis and Conclusion
 ---
