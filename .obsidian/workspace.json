@@ -1,22 +1,18 @@
 {
   "main": {
-    "id": "4afdaa54dc97e197",
+    "id": "4a4fb0623ecd55b5",
     "type": "split",
     "children": [
       {
-        "id": "041f421a22445426",
+        "id": "419f536b47c65c6c",
         "type": "tabs",
         "children": [
           {
-            "id": "2e6d5eeafc15c69f",
+            "id": "ba31c104d935fc42",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Zettelkasten/Atomica/Trigonometric Functions.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -25,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "4b703c2e18c5ace8",
+    "id": "cb97e6ca3c0e697e",
     "type": "split",
     "children": [
       {
-        "id": "9e4387a85dbe01fa",
+        "id": "16ad62fe88f407db",
         "type": "tabs",
         "children": [
           {
-            "id": "f3fe22173ee6f40a",
+            "id": "7327b7c6da34cb29",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,13 +39,13 @@
             }
           },
           {
-            "id": "810842c1190a099f",
+            "id": "dd4816f9e737ebe1",
             "type": "leaf",
             "state": {
               "type": "search",
               "state": {
-                "query": "infinity",
-                "matchingCase": true,
+                "query": "assoc",
+                "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -58,7 +54,7 @@
             }
           },
           {
-            "id": "562556926e483bd8",
+            "id": "033b76fce7499142",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -69,23 +65,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300.5026054382324
+    "width": 608.5
   },
   "right": {
-    "id": "bcd890f43ba86c71",
+    "id": "5a7ffa3f331baa42",
     "type": "split",
     "children": [
       {
-        "id": "480a4162b2995b12",
+        "id": "d631f5295f1daf7c",
         "type": "tabs",
         "children": [
           {
-            "id": "b86457f8b317c0e8",
+            "id": "1a15693374a0a4c3",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Zettelkasten/Atomica/Trigonometric Functions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,56 +92,51 @@
             }
           },
           {
-            "id": "828a88caa33d22e9",
+            "id": "be19047e76fea9fb",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Zettelkasten/Atomica/Trigonometric Functions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "c7bde2022a0ccbec",
+            "id": "13c72309ac09b711",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false
+                "useHierarchy": true
               }
             }
           },
           {
-            "id": "3766968cf243c8df",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "Zettelkasten/Atomica/Trigonometric Functions.md"
-              }
-            }
-          },
-          {
-            "id": "083ee847a611c42c",
+            "id": "db7067bfb3cdec8e",
             "type": "leaf",
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "frequency"
               }
             }
           },
           {
-            "id": "7fcf05b2d8775b7a",
+            "id": "cfcaa3daed17bec5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "09877a954528a007",
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "Zettelkasten/Atomica/Trigonometric Functions.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -154,101 +144,58 @@
       }
     ],
     "direction": "horizontal",
-    "width": 549.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
+      "templater-obsidian:Templater": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "2e6d5eeafc15c69f",
+  "active": "ba31c104d935fc42",
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "Untitled 1.canvas",
-    "Untitled.canvas",
-    "Zettelkasten/References/Test.md",
-    "Zettelkasten/Atomica/Test2.md",
-    "Zettelkasten/Atomica/TEST.md",
-    "Zettelkasten/Atomica/Sentential Connectives.md",
-    "Zettelkasten/Atomica/Series of Continuous and Uniformly Convergent Functions.md",
-    "Zettelkasten/Atomica/Sequence.md",
-    "Zettelkasten/Atomica/Algebraic.md",
-    "Zettelkasten/References/Calculus with Analytic Geometry.md",
-    "Zettelkasten/References/ChatGPT.md",
-    "Zettelkasten/Atomica/Absolute Value.md",
-    "Zettelkasten/Atomica/Continuous Function at a Point.md",
-    "Zettelkasten/Atomica/Completeness Axiom.md",
-    "Zettelkasten/Atomica/Cauchy Sequence.md",
-    "Zettelkasten/Atomica/Carbon Dating.md",
-    "Zettelkasten/Atomica/First Order Linear Differential Equation.md",
-    "Zettelkasten/Atomica/Field Axioms.md",
+    "Zettelkasten/Atomica/TEST5.md",
+    "Zettelkasten/Assignments/TEST.md",
+    "Zettelkasten/Assignments/TEST8.md",
+    "Zettelkasten/Assignments/TEST7.md",
+    "Zettelkasten/Assignments/TEST6.md",
+    "Zettelkasten/Assignments/TEST4.md",
+    "Zettelkasten/Assignments/TEST3.md",
+    "Zettelkasten/Assignments/TEST2.md",
+    "Information/Courses/Self Study.md",
+    "Information/Courses/NEIU-Abstract Algebra I-331.md",
+    "Information/Courses/Courses.md",
+    "Information/Courses/NEIU-Number Theory-322.md",
+    "Information/Courses/NEIU-Applied Combinatorics-432.md",
+    "Untitled",
+    "Information/Courses",
     "Information/Tags.md",
-    "Zettelkasten/Atomica/Accumulation Point.md",
-    "Templates/New Note.md",
-    "Information/To Do.md",
-    "Information/Organization.md",
-    "Information/Dataview.md",
-    "Files/Pasted image 20231121183256.png",
-    "Files/Pasted image 20231121183938.png",
-    "Files/Peek 2023-11-21 20-16.gif",
-    "Files/Peek 2023-11-22 00-46.gif",
-    "Files/Peek 2023-11-22 00-11.gif",
-    "Files/README.md",
+    "Files/Scripts/Templater/Code Map.canvas",
+    "Templates/Bodies/project.md",
+    "Zettelkasten/Atomica/TEST3.md",
+    "Zettelkasten/Atomica/TEST8.md",
+    "Zettelkasten/Atomica/TEST7.md",
+    "Zettelkasten/Atomica/TEST6.md",
+    "Zettelkasten/Atomica/Subsequence.md",
+    "Zettelkasten/Atomica/TEST4.md",
     "Zettelkasten/Atomica/Trigonometric Functions.md",
-    "Conditional.md",
-    "Zettelkasten/Assignments",
-    "Zettelkasten/Research",
-    "Zettelkasten/Institutions",
-    "Zettelkasten/People",
-=======
-    "Untitled.canvas",
-    "Zettelkasten/Atomica/Power Series.md",
-    "Zettelkasten/Atomica/Proper Integral.md",
-    "Zettelkasten/Atomica/Upper and Lower Bound.md",
-    "Zettelkasten/Atomica/Minimum and Maximum.md",
-    "Zettelkasten/Atomica/Bounded.md",
-    "Zettelkasten/Atomica/Supremum.md",
-    "Information/Dataview.md",
-    "Information/Tags.md",
-    "Information/Organization.md",
-    "Files/README.md",
-    "Zettelkasten/Atomica/First Order Linear Differential Equation.md",
-    "Zettelkasten/Atomica/Carbon Dating.md",
-    "Zettelkasten/Atomica/Boundedness.md",
-    "Zettelkasten/Atomica/Antecedant and Consequent.md",
-    "Zettelkasten/Atomica/Absolute Value.md",
-    "Untitled.md",
-    "Zettelkasten/References/RTEST.md",
-    "Zettelkasten/References/RTEST1.md",
-    "TEST.md",
-    "Zettelkasten/References/TEST.md",
-    "Information/To Do.md",
-    "Zettelkasten/References/REF TEST.md",
-    "Zettelkasten/Atomica/Uniform Convergence.md",
-    "TEST.md.md",
-    "TEST4.md.md",
-    "Files/Scripts/main-debug.js",
->>>>>>> aa4b6b7ce5deec147d3ed166c7ac1ce5d19cdab9
-    ".md",
-    "Files/Math and Physics Flash Cards - Underdown",
-    "Files/Scripts/main-debug.js",
-    "home/df/Obsidian/math/Zettelkasten/Atomica",
-    "home/df/Obsidian/math/Zettelkasten",
-<<<<<<< HEAD
-    "home/df/Obsidian/math"
-=======
-    "home/df/Obsidian/math",
-    "home/df/Obsidian",
-    "home/df",
-    "home",
-    "Files/LaTeX/obsidian-latex-suite-snippets.txt",
-    "Files/Snippets"
->>>>>>> aa4b6b7ce5deec147d3ed166c7ac1ce5d19cdab9
+    "Zettelkasten/Atomica/TEST.md",
+    "Zettelkasten/Atomica/TEST2.md",
+    "Zettelkasten/Atomica/TEST9.md",
+    "Templates/Bodies/assignment.md",
+    "Templates/Templates",
+    "Information/Bodies/Untitled",
+    "Templates/Bodies",
+    "Files/Images and GIFS/Peek 2023-11-22 00-46.gif",
+    "Files/Images and GIFS/Pasted image 20231121183256.png",
+    "Files/Images and GIFS",
+    "Files/Images and GIFS/Peek 2023-11-22 00-11.gif",
+    "Files/Images and GIFS/Peek 2023-11-21 20-16.gif",
+    "Files/Images and GIFS/Pasted image 20231121183938.png"
   ]
 }

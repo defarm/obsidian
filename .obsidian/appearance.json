@@ -3,6 +3,7 @@
   "baseFontSize": 16,
   "cssTheme": "AnuPpuccin",
   "enabledCssSnippets": [
-    "small-caps-links"
+    "small-caps-links",
+    "snippets"
   ]
 }

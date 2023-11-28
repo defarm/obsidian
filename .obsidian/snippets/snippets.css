@@ -1,0 +1,88 @@
+/* Style internal links */
+.markdown-preview-view a.internal-link,
+.markdown-source-view a.internal-link {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-size: 20px;
+}
+
+/* Style external links */
+.markdown-preview-view a.external-link,
+.markdown-source-view a.external-link {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-size: 20px;
+}
+
+/* Style internal and external links in edit mode */
+.cm-s-obsidian .cm-hmd-internal-link, 
+.cm-s-obsidian .cm-hmd-external-link {
+    font-variant: small-caps;
+    text-transform: lowercase;
+    font-size: 20px;
+}
+
+/* Changes color and opacity of uncreated notes */
+.graph-view.color-fill-unresolved {
+    color: #000000; /* black */
+}
+
+/* .graph-view.color-fill {
+    color: #FFFFFF;
+}
+
+.graph-view.axiom {
+    color: #FA8072;
+}
+
+.graph-view.color-concept {
+    color: #E9967A;
+}
+
+.graph-view.color-definition {
+    color: #CD5C5C;
+}
+
+.graph-view.color-formula {
+    color: #DC143C;
+}
+
+.graph-view.color-corollary {
+    color: #3CB371;
+}
+
+.graph-view.color-lemma {
+    color: #2E8B57;
+}
+
+.graph-view.color-proof {
+    color: #228B22;
+}
+
+.graph-view.color-theorem {
+    color: #32CD32;
+}
+
+.graph-view.color-person {
+    color: #4682B4;
+}
+
+.graph-view.color-reference {
+    color: #5495ED;
+}
+
+.graph-view.color-subject {
+    color: #1E90FF;
+}
+
+.graph-view.color-institution {
+    color: #7B68EE;
+}
+
+.graph-view.color-assignment {
+    color: #6A5ACD;
+}
+
+.graph-view.color-fill-tag-hidden {
+    display: none;
+} */

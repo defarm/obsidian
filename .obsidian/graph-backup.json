@@ -1,6 +1,6 @@
 {
   "collapse-filter": false,
-  "search": "-tag:#hidden -file:\"New Note\" -file:\"PreLink\"",
+  "search": "-tag:#hidden -file:\"New Note\"",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
@@ -109,6 +109,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.6666666666666634,
-  "close": true
+  "scale": 0.05852766346593486,
+  "close": false
 }

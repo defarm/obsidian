@@ -11,6 +11,7 @@ tags:
 #institution
 #lemma
 #person
+#project
 #proof
 #reference
 #subject

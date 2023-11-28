@@ -21,7 +21,8 @@ f(y) = \pi 1/2|black|dotted
 f(y) = \pi 3/2|black|dotted
 ```
 Red: $\sin \theta = \dfrac{\text{opp}}{\text{hyp}}$    Green: $\cos \theta = \dfrac{\text{adj}}{\text{hyp}}$    Blue: $\tan \theta  = \dfrac{\text{opp}}{\text{adj}}$
-Note: The black dotted lines denote the vertical asymptotes for $\tan \theta$ $\blacktriangleright$
+Note: The black dotted lines denote the vertical [[Asymptotes]].
+ for $\tan \theta$ $\blacktriangleright$
 ###### Animated Trig Functions:
 ![[Peek 2023-11-22 00-11.gif]]
 
@@ -39,7 +40,7 @@ f(y) = \pi 3/2|black|dotted
 f(y) = \pi|black|dotted
 ```
 Red: $\sec \theta = \dfrac{1}{\sin \theta}$    Green: $\csc \theta = \dfrac{1}{\cos \theta}$    Blue: $\cot \theta  = \dfrac{\cos \theta}{\sin \theta }$
-Note: The black dotted lines denote the vertical asymptotes for $\sec \theta, \cos \theta,\text{ and } \cot \theta$.
+Note: The black dotted lines denote the vertical [[asymptotes]] for $\sec \theta, \cos \theta,\text{ and } \cot \theta$.
 
 ###### Animated Inverse Trig Functions:
 ![[Peek 2023-11-22 00-46.gif]]

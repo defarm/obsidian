@@ -4057,6 +4057,7 @@ tEXtSoftware
 tEXtCreation
 tDGGSG
 together
+thought
 definition
 differential
 dy
@@ -5970,6 +5971,7 @@ dggS
 dffb
 deleted
 denoting
+discipline
 id
 is
 irrational
@@ -25527,6 +25529,7 @@ vnW
 vDUU
 vBB
 vNN
+validity
 Example
 Every
 Eccentricity
@@ -33412,7 +33415,6 @@ mkM
 mdre
 mfS
 mew
-meta
 mLY
 mmmat
 mdlI
@@ -37143,6 +37145,8 @@ aCCJVIa
 aeBXn
 adff
 accumulation
+assignment
+argument
 both
 bijective
 by
@@ -48857,6 +48861,8 @@ rPGP
 rqqq
 rrrJ
 root
+reasoning
+rules
 The
 That
 To
@@ -54600,7 +54606,6 @@ particular
 probably
 partial
 problems
-<<<<<<< HEAD
 pointwise
 proper
 pzx
@@ -54629,8 +54634,10 @@ pQk
 pTiE
 proving
 practice
+patterns
+pinter
+<<<<<<< HEAD
 =======
-proper
 >>>>>>> aa4b6b7ce5deec147d3ed166c7ac1ce5d19cdab9
 zero
 zp
@@ -79478,6 +79485,7 @@ CPP
 Cnn
 Cxxx
 Cuuu
+Charles
 Pollard
 Plane
 Properties
@@ -81328,6 +81336,7 @@ PNG
 PYp
 PTU
 PRR
+Pinter
 Harry
 How
 Hostetler

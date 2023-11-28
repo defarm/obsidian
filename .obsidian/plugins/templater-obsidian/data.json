@@ -1,6 +1,6 @@
 {
   "command_timeout": 5,
-  "templates_folder": "Templates",
+  "templates_folder": "Templates/Templates",
   "templates_pairs": [
     [
       "writeToFile",
@@ -22,7 +22,8 @@
   "syntax_highlighting": true,
   "syntax_highlighting_mobile": false,
   "enabled_templates_hotkeys": [
-    "Templates/New Note.md"
+    "Templates/Templates/New Note.md",
+    "Templates/Templates/PreLink.md"
   ],
   "startup_templates": [
     ""
