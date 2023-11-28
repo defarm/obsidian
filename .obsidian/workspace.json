@@ -11,8 +11,12 @@
             "id": "ba31c104d935fc42",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Information/Tags.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Information/Tags.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Information/Tags.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Information/Tags.md"
+              }
             }
           },
           {
@@ -136,7 +144,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {}
+              "state": {
+                "file": "Information/Tags.md"
+              }
             }
           }
         ],
@@ -159,6 +169,17 @@
   },
   "active": "ba31c104d935fc42",
   "lastOpenFiles": [
+    "Files/Scripts/Templater/Code Map.canvas",
+    "Zettelkasten/Projects",
+    "Zettelkasten/Courses/NEIU-Abstract Algebra I-331.md",
+    "Zettelkasten/Courses/NEIU-Applied Combinatorics-432.md",
+    "Zettelkasten/Courses/NEIU-Number Theory-322.md",
+    "Zettelkasten/Courses/Self Study.md",
+    "Zettelkasten/Assignments/Self Study",
+    "Zettelkasten/Assignments/NEIU-Number Theory-322",
+    "Zettelkasten/Assignments/NEIU-Applied Combinatorics-432",
+    "Zettelkasten/Assignments/Untitled.md",
+    "Zettelkasten/Assignments/NEIU-Abstract Algebra I-331",
     "Zettelkasten/Atomica/TEST5.md",
     "Zettelkasten/Assignments/TEST.md",
     "Zettelkasten/Assignments/TEST8.md",
@@ -167,15 +188,10 @@
     "Zettelkasten/Assignments/TEST4.md",
     "Zettelkasten/Assignments/TEST3.md",
     "Zettelkasten/Assignments/TEST2.md",
-    "Information/Courses/Self Study.md",
-    "Information/Courses/NEIU-Abstract Algebra I-331.md",
     "Information/Courses/Courses.md",
-    "Information/Courses/NEIU-Number Theory-322.md",
-    "Information/Courses/NEIU-Applied Combinatorics-432.md",
     "Untitled",
-    "Information/Courses",
+    "Zettelkasten/Courses",
     "Information/Tags.md",
-    "Files/Scripts/Templater/Code Map.canvas",
     "Templates/Bodies/project.md",
     "Zettelkasten/Atomica/TEST3.md",
     "Zettelkasten/Atomica/TEST8.md",
@@ -186,14 +202,11 @@
     "Zettelkasten/Atomica/Trigonometric Functions.md",
     "Zettelkasten/Atomica/TEST.md",
     "Zettelkasten/Atomica/TEST2.md",
-    "Zettelkasten/Atomica/TEST9.md",
-    "Templates/Bodies/assignment.md",
     "Templates/Templates",
     "Information/Bodies/Untitled",
     "Templates/Bodies",
     "Files/Images and GIFS/Peek 2023-11-22 00-46.gif",
     "Files/Images and GIFS/Pasted image 20231121183256.png",
-    "Files/Images and GIFS",
     "Files/Images and GIFS/Peek 2023-11-22 00-11.gif",
     "Files/Images and GIFS/Peek 2023-11-21 20-16.gif",
     "Files/Images and GIFS/Pasted image 20231121183938.png"

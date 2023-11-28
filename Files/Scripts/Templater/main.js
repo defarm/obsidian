@@ -1,3 +1,4 @@
+// INITS
 const fs = require('fs').promises;
 console.log('fs: initialized\n', fs);
 
@@ -7,12 +8,12 @@ console.log('tp: initiliazed\n', to);
 const mm = app.plugins.plugins["metadata-menu"].api;
 console.log('mm: initialized\n', mm);
 
-// Gets the tag from the file Tags.md in the Information folder. Also, slices the # so that the YAML frontmatter is sane.
-// TO DO
-// remedy absolute path variable to tp.app.vault
-// update fs to tp
-// tp whitespace control
+// GET FUNCTIONS
 async function getTag(tp) {
+    // Gets the tag from the file Tags.md in the Information folder. Also, slices the # so that the YAML frontmatter is sane.
+    // TO DO
+    // remedy absolute path variable to tp.app.vault
+    // update fs to tp
     try {
         console.log('getTag: starting');
 
@@ -23,7 +24,7 @@ async function getTag(tp) {
         console.log('getTag: tags ', tags);
         
         const chosenTag = await tp.system.suggester(tags, tags);
-        const chosenTagSliced = chosenTag.slice(1).trim(); // Necessary for YAML frontmatter to be formatted correctly.
+        const chosenTagSliced = chosenTag.slice(1).trim();
         console.log('getTag: returning chosenTag');
         return chosenTagSliced;
 
@@ -32,12 +33,11 @@ async function getTag(tp) {
         return '\ngetTag: unknown tag';
     };
 };
-
-// Gets the subject from the Subjects folder using tp.system.suggester().
-// TO DO
-// remedy absolute path variable to tp.app.vault
-// add multiple subjects at note creation
 async function getSubject(tp) {
+    // Gets the subject from the Subjects folder using tp.system.suggester().
+    // TO DO
+    // remedy absolute path variable to tp.app.vault
+    // add multiple subjects at note creation
     try {
         console.log('getSubject: starting');
 
@@ -57,12 +57,11 @@ async function getSubject(tp) {
         return '\ngetSubject: unknown subject';
     };
 };
-
-// Gets the reference from the References folder using tp.system.suggester().
-// TO DO
-// remedy absolute path variable to tp.app.vault
-// add functionality to use [[REFERENCE#SECTION^HEX]] linking structure using tp.file.include for the contents of the reference.
 async function getReference(tp) {
+    // Gets the reference from the References folder using tp.system.suggester().
+    // TO DO
+    // remedy absolute path variable to tp.app.vault
+    // add functionality to use [[REFERENCE#SECTION^HEX]] linking structure using tp.file.include for the contents of the reference.
     try {
         console.log('getReference: starting');
 
@@ -82,13 +81,15 @@ async function getReference(tp) {
         return '\ngetReference: unknown reference';
     };
 };
-
 async function getCourse(tp) {
+    // Gets the course from the Courses folder using tp.system.suggester().
+    // TO DO
+    // remedy absolute path variable to tp.app.vault
     try {
         console.log('getCourse: starting');
 
         // !! ABSOLUTE PATH BE SURE TO UPDATE IF THE STRUCTURE CHANGES !! //
-        const courseFilePath = '/home/df/Obsidian/math/Information/Courses/';
+        const courseFilePath = '/home/df/Obsidian/math/Zettelkasten/Courses/';
 
         const files = await fs.readdir(courseFilePath);
         const courses = files.map(file => file.replace('.md', ''));
@@ -103,14 +104,163 @@ async function getCourse(tp) {
     }
 };
 
-async function subjectFrontmatter(tp, mm, filePath, tag, id, title) {
+// FRONTMATTER
+async function generalFrontmatter(tp, mm, filePath, tag) {
+    // Create frontmatter for every new note. Calls special frontmatter functions by tag.
+    console.log('generalFrontmatter: starting');
+    console.log('generalFrontmatter: filepath:\n', filePath);
+    
+    const id = tp.file.creation_date("YYYYMMDDHHMMss");
+    console.log('generalFrontmatter: id ', id);
 
+    console.log('generalFrontmatter: tag ', tag);
+    console.log('generalFrontmatter: checking tag case');
+
+    const subject = await getSubject(tp);
+    console.log('generalFrontmatter: returned subject\n', subject);
+
+    const alias = await tp.system.prompt("Alias: ");
+    console.log('generalFrontmatter: returned alias:\n', alias);
+
+    console.log(`generalFrontmatter: generating mm fields payload for ${tag}.`);
+    fieldsPayload = [
+        {
+            name: "tags",
+            payload: { value: tag }
+        },
+        {
+            name: "id",
+            payload: { value: id }
+        },
+        {
+            name: "subject",
+            payload: { value: `[[${subject}]]`}
+        },
+        {
+            name: "alias",
+            payload: {value: alias}
+        }
+    ];
+    console.log('generalFrontmatter: payload:\n', fieldsPayload);
+
+    switch (tag) {
+        case 'axiom':
+        case 'concept':
+        case 'corollary':
+        case 'definition':
+        case 'formula':
+        case 'lemma':
+        case 'proof':
+        case 'theorem':
+            reference = await getReference(tp);
+            console.log('generalFrontmatter: returned reference\n', reference);
+            fieldsPayload = fieldsPayload.concat([{name: "reference", payload: {value: `[[${reference}]]`}}]);
+            console.log('generalFrontmatter: posting values at:\n', filePath);
+            try {
+                await mm.postValues(filePath, fieldsPayload);
+                console.log('generalFrontmatter: payload posted');
+            } catch (err) {
+                console.error("generalFrontmatter: error posting payload", err);
+            };
+            break;
+        case 'assignment':
+            await assignmentFrontmatter(tp, mm, filePath, fieldsPayload);
+            break;
+        case 'course':
+            console.error(`generalFrontmatter: ${tag}Frontmatter not yet implemented!`);
+            // await courseFrontmatter(tp, mm, filePath, fieldsPayload);
+            break;
+        case 'institution':
+            console.error(`generalFrontmatter: ${tag}Frontmatter not yet implemented!`);
+            // await institutionFrontmatter(tp, mm, filePath, fieldsPayload);
+            break;
+        case 'person':
+            await personFrontmatter(tp, mm, filePath, fieldsPayload);
+            break;
+        case 'research':
+            console.error(`generalFrontmatter: ${tag}Frontmatter not yet implemented!`)
+            // await projectFrontmatter(tp, mm, filePath, fieldsPayload);
+            break;
+        case 'reference':
+            await referenceFrontmatter(tp, mm, filePath, fieldsPayload);
+            break;
+        case 'subject':
+            console.error(`generalFrontmatter: ${tag}Frontmatter not yet implemented!`)
+            // await subjectFrontmatter(tp, mm, filePath, fieldsPayload);
+            break;
+        default:
+            console.log('generalFrontmatter: returning unknown');
+            return '\generalFrontmatter: unknown';
+        };
 };
 
-// Creates a new reference. Called by generateFrontmatter if tag is #reference. Calls on Metadata Menu to insert a payload of frontmatter to the note.
-// TO DO
-// input, error handling
-async function referenceFrontmatter(tp, mm, filePath, genMeta) { // , tag, id, title, subject, alias) 
+// SPECIAL FRONTMATTER
+async function assignmentFrontmatter(tp, mm, filePath, genMeta) {
+    // Creates a new assignment. Called by generalFrontmatter if tag is #assignment. Calls on Metadata Menu to insert a payload of frontmatter to the note.
+    fieldsPayload = [
+        {
+            name: "Course",
+            payload: {value: await getCourse(tp)}
+        },
+        {
+            name: "Source",
+            payload: {value: await getReference(tp)}
+        },
+        {
+            name: "Page",
+            payload: {value: await tp.system.prompt("Page:")}
+        }
+    ];
+
+    fieldsPayload = genMeta.concat(fieldsPayload)
+
+    console.log('assignmentFrontmatter: posting values at:\n', filePath);
+    try {
+        await mm.postValues(filePath, fieldsPayload);
+        console.log('assignmentFrontmatter: payload posted');
+    } catch (err) {
+        console.error("assignmentFrontmatter: error posting payload", err);
+    };
+};
+async function courseFrontmatter(tp, mm, filePath, tag, id, title) {
+    // Creates a new course. Called by generalFrontmatter if tag is #course. Calls on Metadata Menu to insert a payload of frontmatter to the note.
+};
+async function institutionFrontmatter(tp, tag, filePath, genMeta) {
+    // Creates a new institution. Called by generalFrontmatter if tag is #institution. Calls on Metadata Menu to insert a payload of frontmatter to the note.
+};
+async function personFrontmatter(tp, mm, filePath, genMeta) {
+        // Creates a new person. Called by generalFrontmatter if tag is #person. Calls on Metadata Menu to insert a payload of frontmatter to the note.
+    fieldsPayload = [
+        {
+            name: "Birthdate",
+            payload: {value: await tp.system.prompt("Birthdate:")}
+        },
+        {
+            name: "Deathdate",
+            payload: {value: await tp.system.prompt("Deathdate:")}
+        },
+        {
+            name: "Country of Origin",
+            payload: {value: await tp.system.prompt("Country of Origin:")}
+        },
+        {
+            name: "Notable Works",
+            payload: {value: await tp.system.prompt("Notable Works:")}
+        }
+    ];
+
+	fieldsPayload = genMeta.concat(fieldsPayload)
+	
+    console.log('personFrontmatter: posting values at:\n', filePath);
+    try {
+        await mm.postValues(filePath, fieldsPayload);
+        console.log('personFrontmatter: payload posted');
+    } catch (err) {
+        console.error("personFrontmatter: error posting payload", err);
+    };
+};
+async function referenceFrontmatter(tp, mm, filePath, genMeta) {
+    // Creates a new reference. Called by generalFrontmatter if tag is #reference. Calls on Metadata Menu to insert a payload of frontmatter to the note.
     fieldsPayload = [
         {
             name: "Attribution",
@@ -184,164 +334,16 @@ async function referenceFrontmatter(tp, mm, filePath, genMeta) { // , tag, id, t
         console.error("referenceFrontmatter: error posting payload", err);
     };
 };
-
-// Creates a new institution file on #institution tag selection in getTag
-// TO TO
-// Figure out how to reconcile this function with calling the #institution tag.
-async function institutionFrontmatter(tp, tag, filePath, genMeta) {
-
+async function researchFrontmatter(tp, mm, filePath, genMeta) {
+    // Creates a new research project. Called by generalFrontmatter if tag is #research. Calls on Metadata Menu to insert a payload of frontmatter to the note.
+};
+async function subjectFrontmatter(tp, mm, filePath, tag, id, title) {
+    // Creates a new subject. Called by generalFrontmatter if tag is #subject. Calls on Metadata Menu to insert a payload of frontmatter to the note.
 };
 
-async function personFrontmatter(tp, mm, filePath, genMeta) {
-    fieldsPayload = [
-        {
-            name: "Birthdate",
-            payload: {value: await tp.system.prompt("Birthdate:")}
-        },
-        {
-            name: "Deathdate",
-            payload: {value: await tp.system.prompt("Deathdate:")}
-        },
-        {
-            name: "Country of Origin",
-            payload: {value: await tp.system.prompt("Country of Origin:")}
-        },
-        {
-            name: "Notable Works",
-            payload: {value: await tp.system.prompt("Notable Works:")}
-        }
-    ];
-
-	fieldsPayload = genMeta.concat(fieldsPayload)
-	
-    console.log('personFrontmatter: posting values at:\n', filePath);
-    try {
-        await mm.postValues(filePath, fieldsPayload);
-        console.log('personFrontmatter: payload posted');
-    } catch (err) {
-        console.error("personFrontmatter: error posting payload", err);
-    };
-};
-
-async function projectFrontmatter(tp, mm, filePath, genMeta) {
-
-};
-
-async function assignmentFrontmatter(tp, mm, filePath, genMeta) {
-    fieldsPayload = [
-        {
-            name: "Course",
-            payload: {value: await getCourse(tp)}
-        },
-        {
-            name: "Source",
-            payload: {value: await getReference(tp)}
-        },
-        {
-            name: "Page",
-            payload: {value: await tp.system.prompt("Page:")}
-        }
-    ];
-
-    fieldsPayload = genMeta.concat(fieldsPayload)
-
-    console.log('assignmentFrontmatter: posting values at:\n', filePath);
-    try {
-        await mm.postValues(filePath, fieldsPayload);
-        console.log('assignmentFrontmatter: payload posted');
-    } catch (err) {
-        console.error("assignmentFrontmatter: error posting payload", err);
-    };
-};
-
-// Generates the frontmatter for a new note by tag
-// TO DO
-// link to createReference
-// institution
-async function generalFrontmatter(tp, mm, filePath, tag) {
-    console.log('generalFrontmatter: starting');
-    console.log('generalFrontmatter: filepath:\n', filePath);
-    
-    const id = tp.file.creation_date("YYYYMMDDHHMMss");
-    console.log('generalFrontmatter: id ', id);
-
-    console.log('generalFrontmatter: tag ', tag);
-    console.log('generalFrontmatter: checking tag case');
-
-    const subject = await getSubject(tp);
-    console.log('generalFrontmatter: returned subject\n', subject);
-
-    const alias = await tp.system.prompt("Alias: ");
-    console.log('generalFrontmatter: returned alias:\n', alias);
-
-    console.log(`generalFrontmatter: generating mm fields payload for ${tag}.`);
-    fieldsPayload = [
-        {
-            name: "tags",
-            payload: { value: tag }
-        },
-        {
-            name: "id",
-            payload: { value: id }
-        },
-        {
-            name: "subject",
-            payload: { value: `[[${subject}]]`}
-        },
-        {
-            name: "alias",
-            payload: {value: alias}
-        }
-    ];
-    console.log('generalFrontmatter: payload:\n', fieldsPayload);
-
-    switch (tag) {
-        case 'axiom':
-        case 'concept':
-        case 'corollary':
-        case 'definition':
-        case 'formula':
-        case 'lemma':
-        case 'proof':
-        case 'theorem':
-            reference = await getReference(tp);
-            console.log('generalFrontmatter: returned reference\n', reference);
-            fieldsPayload = fieldsPayload.concat([{name: "reference", payload: {value: `[[${reference}]]`}}]);
-            console.log('generalFrontmatter: posting values at:\n', filePath);
-            try {
-                await mm.postValues(filePath, fieldsPayload);
-                console.log('generalFrontmatter: payload posted');
-            } catch (err) {
-                console.error("generalFrontmatter: error posting payload", err);
-            };
-            break;
-        case 'assignment':
-            await assignmentFrontmatter(tp, mm, filePath, fieldsPayload);
-            break;
-        case 'institution':
-            await institutionFrontmatter(tp, mm, filePath, fieldsPayload);
-            break;
-        case 'person':
-            await personFrontmatter(tp, mm, filePath, fieldsPayload);
-            break;
-        case 'project':
-            await personFrontmatter(tp, mm, filePath, fieldsPayload);
-            break;
-        case 'reference':
-            await referenceFrontmatter(tp, mm, filePath, fieldsPayload);
-            break;
-        case 'subject':
-            await subjectFrontmatter(tp, mm, filePath, fieldsPayload);
-            break;
-        default:
-            console.log('generalFrontmatter: returning unknown');
-            return '\generalFrontmatter: unknown';
-        };
-};
-
-// Generates body of note by tag
-// TO DO
+// BODY
 async function appendBody(tp, tag, title) {
+    // Reads from /Templates/Bodies for adding to new note by tag.
     console.log('appendBody: starting');
     console.log('appendBody: checking tag case: ', tag);
     
@@ -366,9 +368,9 @@ async function appendBody(tp, tag, title) {
     }
 };
 
-// Moves the titular note to the correct folder based on tag type.
-// TO DO
+// MOVE
 async function moveToLocation(tp, tag, title) {
+    // Moves new note to the correct location
     console.log('moveToLocation: starting');
 
     let folderChoice;
@@ -386,14 +388,20 @@ async function moveToLocation(tp, tag, title) {
         case 'assignment':
             folderChoice = "Assignments";
             break;
-        case 'subject':
-            folderChoice = "Subjects";
+        case 'course':
+            folderChoice = "Courses";
+            break;
+        case 'institution':
+            folderChoice = "Institutions";
             break;
         case 'person':
             folderChoice = "People";
             break;
-        case 'institution':
-            folderChoice = "Institutions";
+        case 'research':
+            folderChoice = "Research"
+            break;
+        case 'subject':
+            folderChoice = "Subjects";
             break;
         case 'reference':
             folderChoice = "References";
@@ -413,10 +421,9 @@ async function moveToLocation(tp, tag, title) {
     };
 };
 
-// Main function which handles calling functions in the correct order and handles moving the note to the correct folder upon completion
-// TO DO
-// unique title check, debug console error filename already exists
+// MAIN
 async function main(tp) {
+    // Calls functions in correct order.
     console.log('main: starting');
 
     console.log('main: calling getTag');
@@ -438,7 +445,7 @@ async function main(tp) {
     await appendBody(tp, tag, title);
 
     console.log('main: letting frontmatter');
-    console.log('main: calling generateFrontmatter');
+    console.log('main: calling generalFrontmatter');
     await generalFrontmatter(tp, mm, filePath, tag, title);
 
     console.log('main: metadata menu conversion');

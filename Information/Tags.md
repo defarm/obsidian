@@ -6,13 +6,14 @@ tags:
 #axiom
 #concept
 #corollary
+#course
 #definition
 #formula
 #institution
 #lemma
 #person
-#project
 #proof
 #reference
+#research
 #subject
 #theorem
